@@ -1,0 +1,47 @@
+.regis-header {
+    display: flex;
+    justify-content: center;
+    text-align: center;
+    padding-top: 40px;
+}
+.ten_tom{
+    width: 58%;
+    height: 10%;
+}
+.header55{
+    text-align: center;
+    padding-bottom: 0px;
+    font-size: 14px;
+    color: #7a7878;
+}
+.connected{
+    font-size: 17px;
+    text-align:center;
+
+}
+.lable_float {
+    ion-label {
+    position: relative;
+    top: 2.5px;
+    width: 100%;
+    font-size: 15px;
+}
+ion-icon{
+    position: relative;
+    top: 2.5px;
+    width: 22px;
+    margin-right: 2%;
+}
+ion-input {
+    font-size: 15px;
+    padding-left: 5px !important;
+    color: #615f5f;
+    font-weight: 400;
+}
+}
+@media all and (min-width: 768px) and (max-width: 1024px) {
+    .ten_tom{
+        width: 35%;
+        height: 10%;
+    }
+}
