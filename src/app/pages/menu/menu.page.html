@@ -1,9 +1,18 @@
 <ion-split-pane>
   <ion-menu contentId="content">
     <ion-header>
-      <ion-toolbar color="primary">
+      <!-- <ion-toolbar color="primary">
         <ion-title>Menu</ion-title>
-      </ion-toolbar>
+      </ion-toolbar> -->
+      <ion-menu-toggle auto-hide="false">
+      <div class="profile profile_new" routerDirection="root"  [routerLink]="['/menu/profile']" routerLinkActive="router-link-active" >
+        <img  class="user-img" alt="profile-pic "  [src]="userData.imagePath ? userData.imagePath : 'assets/imgs/profilepic.svg'">
+      
+              
+              <p *ngIf="userData.name"><span style="margin-left: 16px;margin-right: 4px;">Hi</span> {{userData.name}}</p>
+
+        </div>
+        </ion-menu-toggle>
     </ion-header>
     <ion-content>
       <ion-list>

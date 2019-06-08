@@ -1,6 +1,6 @@
 import { Router, ActivatedRoute, NavigationExtras } from '@angular/router';
 import { AuthService } from '../../core/auth/auth.service';
-import { Observable ,interval} from 'rxjs';
+import { Observable , interval} from 'rxjs';
 import { Component, OnInit } from '@angular/core';
 import { Storage } from '@ionic/storage';
 @Component({
@@ -10,6 +10,12 @@ import { Storage } from '@ionic/storage';
 })
 
 export class LoginPage implements OnInit {
+  constructor(
+    private authService: AuthService,
+    private router: Router,
+    private route: ActivatedRoute,
+    private storage: Storage
+  ) { }
   user = {
   name: 'mahesh',
   email: 'mahi@gmail.com',
@@ -23,12 +29,8 @@ export class LoginPage implements OnInit {
   return = '';
   router_url: string;
   show = false;
-  constructor(
-    private authService: AuthService,
-    private router: Router,
-    private route: ActivatedRoute,
-    private storage: Storage
-  ) { }
+  passwordType: string = 'password';
+  passwordIcon: string = 'eye-off';
 
   ngOnInit() {
     this.authState$ = this.authService.getAuthStateObserver();
@@ -50,8 +52,6 @@ console.log('hello', this.authState$);
       _ => this.router.navigateByUrl(this.router_url)
     );
   }
-  passwordType: string = 'password';
-  passwordIcon: string = 'eye-off';
  
   hideShowPassword() {
       this.passwordType = this.passwordType === 'text' ? 'password' : 'text';
@@ -73,4 +73,3 @@ if(userdata.email && userdata.userPassword){
     this.authService.logout();
   }
   }
- 

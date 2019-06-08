@@ -837,9 +837,17 @@ module.exports = webpackAsyncContext;
 /***/ (function(module, exports, __webpack_require__) {
 
 var map = {
+	"../../profile/profile.module": [
+		"./src/app/profile/profile.module.ts",
+		"common"
+	],
 	"../add-user/add-user.module": [
 		"./src/app/pages/add-user/add-user.module.ts",
 		"add-user-add-user-module"
+	],
+	"../agency-dashboard/agency-dashboard.module": [
+		"./src/app/pages/agency-dashboard/agency-dashboard.module.ts",
+		"agency-dashboard-agency-dashboard-module"
 	],
 	"../details/details.module": [
 		"./src/app/pages/details/details.module.ts",
@@ -869,6 +877,10 @@ var map = {
 		"./src/app/forgot-password/forgot-password.module.ts",
 		"forgot-password-forgot-password-module"
 	],
+	"./pages/agency-dashboard/agency-dashboard.module": [
+		"./src/app/pages/agency-dashboard/agency-dashboard.module.ts",
+		"agency-dashboard-agency-dashboard-module"
+	],
 	"./pages/home/home.module": [
 		"./src/app/pages/home/home.module.ts",
 		"pages-home-home-module"
@@ -883,6 +895,7 @@ var map = {
 	],
 	"./pages/menu/menu.module": [
 		"./src/app/pages/menu/menu.module.ts",
+		"common",
 		"pages-menu-menu-module"
 	],
 	"./sign-up/sign-up.module": [
@@ -899,7 +912,7 @@ function webpackAsyncContext(req) {
 			throw e;
 		});
 	}
-	return __webpack_require__.e(ids[1]).then(function() {
+	return Promise.all(ids.slice(1).map(__webpack_require__.e)).then(function() {
 		var id = ids[0];
 		return __webpack_require__(id);
 	});
@@ -955,8 +968,12 @@ var routes = [
         // resolve:{
         //   special:DataResolverService
         // },
-        canActivate: [_core_auth_auth_guard__WEBPACK_IMPORTED_MODULE_2__["AuthGuard"]], loadChildren: './pages/membership-for-agency/membership-for-agency.module#MembershipForAgencyPageModule' },
+        canActivate: [_core_auth_auth_guard__WEBPACK_IMPORTED_MODULE_2__["AuthGuard"]],
+        loadChildren: './pages/membership-for-agency/membership-for-agency.module#MembershipForAgencyPageModule' },
+    { path: 'membership/:id', canActivate: [_core_auth_auth_guard__WEBPACK_IMPORTED_MODULE_2__["AuthGuard"]],
+        loadChildren: './pages/membership-for-agency/membership-for-agency.module#MembershipForAgencyPageModule' },
     { path: 'forgot-password', loadChildren: './forgot-password/forgot-password.module#ForgotPasswordPageModule' },
+    { path: 'agency-dashboard', loadChildren: './pages/agency-dashboard/agency-dashboard.module#AgencyDashboardPageModule' },
 ];
 // canActivate: [AuthGuard],
 var AppRoutingModule = /** @class */ (function () {
@@ -1027,6 +1044,7 @@ var AppComponent = /** @class */ (function () {
         this.splashScreen = splashScreen;
         this.statusBar = statusBar;
         this.storage = storage;
+        this.globaldata = {};
         this.initializeApp();
     }
     AppComponent.prototype.initializeApp = function () {
@@ -1036,18 +1054,19 @@ var AppComponent = /** @class */ (function () {
             _this.splashScreen.hide();
             _this.authService.authState$.subscribe(function (state) {
                 if (state === true) {
-                    _this.router.navigate(['membership']);
+                    // this.router.navigate(["membership"]);
+                    _this.router.navigate(["/menu/agency-dashboard"]);
                 }
                 else {
                     console.log("hello222");
-                    _this.router.navigate(['home']);
+                    _this.router.navigate(["home"]);
                 }
             });
         });
     };
     AppComponent = __decorate([
         Object(_angular_core__WEBPACK_IMPORTED_MODULE_0__["Component"])({
-            selector: 'app-root',
+            selector: "app-root",
             template: __webpack_require__(/*! ./app.component.html */ "./src/app/app.component.html")
         }),
         __metadata("design:paramtypes", [_app_core_auth_auth_service__WEBPACK_IMPORTED_MODULE_4__["AuthService"],
@@ -1060,6 +1079,24 @@ var AppComponent = /** @class */ (function () {
     return AppComponent;
 }());
 
+//       this.authService.authState$.subscribe(state => {
+//         console.log("hello medium",this.storage.get('membership'))
+//         this.storage.get("membership").then(data => {
+//           this.globaldata.membership = data;
+//           console.log(data);
+//         });
+//         console.log("medium",state,this.globaldata.membership);
+// if( state === true && this.globaldata.membership){
+//   console.log("hello222 medium");
+//   this.router.navigate(["menu/first/tabs/tab1"]);
+// }else if (state === true && !this.globaldata.membership) {
+//     console.log("hello medium");
+//     this.router.navigate(["membership"]);
+//   } else {
+//     console.log("hello222");
+//     this.router.navigate(["home"]);
+//   }
+//       });
 
 
 /***/ }),
@@ -1234,7 +1271,7 @@ var AuthService = /** @class */ (function () {
     }
     AuthService.prototype.checkToken = function () {
         var _this = this;
-        return this.storage.get('TOKEN_KEY').then(function (res) {
+        return this.storage.get('token').then(function (res) {
             if (res) {
                 console.log('hellotest');
                 _this.authState$.next(true);
@@ -1243,13 +1280,13 @@ var AuthService = /** @class */ (function () {
     };
     AuthService.prototype.login = function () {
         var _this = this;
-        return this.storage.set('TOKEN_KEY', 'Bearer 123456').then(function (res) {
+        return this.storage.set('token', 'Bearer 123456').then(function (res) {
             _this.authState$.next(true);
         });
     };
     AuthService.prototype.logout = function () {
         var _this = this;
-        return this.storage.remove('TOKEN_KEY').then(function (_) {
+        return this.storage.remove('token').then(function (_) {
             _this.authState$.next(false);
             _this.storage.clear();
         });

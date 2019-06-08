@@ -9,28 +9,46 @@ import { AuthService } from '../../core/auth/auth.service';
 })
 export class MenuPage implements OnInit {
  selectedPath = '';
- 
+
   pages = [
     {
-      title: 'First Page with Tabs',
+      title: 'Dashboard',
+      url: '/menu/agency-dashboard'
+    }, {
+      title: 'Properties',
       url: '/menu/first'
     },
     {
-      title: 'Second Page blank',
+      title: 'Revenues',
       url: '/menu/second'
+    },
+    {
+      title: 'Agents',
+      url: '/menu/second'
+    },
+    {
+      title: 'Contacts',
+     url: '/menu/second'
+    },
+    {
+      title: 'Settings',
+     url: '/menu/second'
     }
   ];
- 
-  constructor(private router: Router,  private authService: AuthService,) {
+  userData: any = {'name': 'Aj Chand', 'imagePath': null};
+  constructor(private router: Router,  private authService: AuthService, ) {
     this.router.events.subscribe((event: RouterEvent) => {
       if (event && event.url) {
         this.selectedPath = event.url;
       }
     });
   }
- 
+
   ngOnInit() {
- 
+
+  }
+  gotoProfile() {
+    this.router.navigate(['/profile']);
   }
   logout() {
     this.authService.logout();

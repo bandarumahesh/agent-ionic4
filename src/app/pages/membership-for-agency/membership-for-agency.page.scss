@@ -1,0 +1,110 @@
+.profilePic{
+    .list{
+        margin-bottom: 5px;
+        background-color: transparent;
+        .main-picsss {
+                img {
+                    width: 130px;
+                    height: 130px;
+                }
+            .button {
+                height: 40px;
+            }
+        }
+    }
+}
+.main-picsss{
+    margin: 0 auto;
+    width: 150px;
+    background: transparent !important;
+    padding-top: 45px;
+    padding-left: 0px !important;
+    border-bottom: 0px;
+}
+.main-pic{
+//   background:linear-gradient(to bottom, #20c659, #a8e063);
+background: linear-gradient(to bottom, #3bdc7e, #b0e66d);
+  position: absolute;
+  /* bottom: 100px; */
+  width: 100%;
+  left: 0;
+  top: 0px;
+//   padding-bottom: 160px;
+}
+#back-ground{
+    background: transparent !important;
+}
+.main-divvc{
+    padding-top: 146px;
+}
+
+
+
+
+.footer_butns{
+    width: 100%;
+    justify-content: space-between;
+}
+ion-item{
+    padding: 4px 16px 4px 5px;
+}
+.businesss_admin{
+    padding-left: 18px;
+    margin-top: 34px;
+}
+.footer_subbtns{
+    font-size: 18px !important;
+}
+.hellos{
+    position: relative;
+    top: 0.6px;
+}
+.terms_conditions{
+    position: relative;
+    top: 6px;
+    margin-right: 11px;
+}
+
+
+
+@media all and (min-width: 768px) and (max-width: 1024px) {
+    
+.main-picsss{
+    margin: 0 auto;
+    width: 240px !important;
+    background: transparent !important;
+    padding-top: 25px !important;
+
+}
+.red-cam {
+    width: 47px !important;
+    height: 47px !important;
+    background-color: #4caf50;
+    color: white;
+    position: relative;
+    top: -48px !important;
+    right: -121px !important;
+    padding-left: 14px !important;
+    padding-top: 12px !important;
+    border-radius: 50%;
+    font-size: 20px;
+    border: 2px solid #fff;
+}
+.main-pic{
+    background: linear-gradient(to bottom, #20c659, #a8e063);
+    position: absolute;
+    /* bottom: 100px; */
+    width: 100%;
+    left: 0;
+    top: 0px;
+    padding-bottom: 180px !important;
+}
+.main-divvc{
+    padding-top: 215px !important;
+}
+
+.profilePic .list .main-picsss ion-avatar img {
+width: 185px !important;
+height: 185px !important;
+}
+}

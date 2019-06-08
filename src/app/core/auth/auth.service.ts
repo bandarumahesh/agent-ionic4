@@ -20,7 +20,7 @@ export class AuthService {
     });
   }
   private checkToken(): Promise<void> {
-    return this.storage.get('TOKEN_KEY').then(res => {
+    return this.storage.get('token').then(res => {
       if (res) {
         console.log('hellotest');
         this.authState$.next(true);
@@ -28,12 +28,12 @@ export class AuthService {
     });
   }
   public login(): Promise<void> {
-    return this.storage.set('TOKEN_KEY', 'Bearer 123456').then(res => {
+    return this.storage.set('token', 'Bearer 123456').then(res => {
       this.authState$.next(true);
     });
   }
   public logout(): Promise<void> {
-    return this.storage.remove('TOKEN_KEY').then(_ => {
+    return this.storage.remove('token').then(_ => {
       this.authState$.next(false);
       this.storage.clear();
     });

@@ -23,8 +23,13 @@ const routes: Routes = [
   // resolve:{
   //   special:DataResolverService
   // },
-  canActivate: [AuthGuard], loadChildren: './pages/membership-for-agency/membership-for-agency.module#MembershipForAgencyPageModule' },
+  canActivate: [AuthGuard], 
+  loadChildren: './pages/membership-for-agency/membership-for-agency.module#MembershipForAgencyPageModule' },
+  { path: 'membership/:id', canActivate: [AuthGuard],
+  loadChildren: './pages/membership-for-agency/membership-for-agency.module#MembershipForAgencyPageModule' },
   { path: 'forgot-password', loadChildren: './forgot-password/forgot-password.module#ForgotPasswordPageModule' },
+  { path: 'agency-dashboard', loadChildren: './pages/agency-dashboard/agency-dashboard.module#AgencyDashboardPageModule' },
+
   
 ];
 // canActivate: [AuthGuard],

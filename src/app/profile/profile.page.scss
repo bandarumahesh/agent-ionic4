@@ -1,0 +1,36 @@
+.profile_Mainview{
+    height: 38%;
+    background: linear-gradient(to bottom, #3bdc7e, #b0e66d);
+    width: 100%;
+}
+.editbtn {
+    position: absolute;
+    right: 20px;
+    top: 33.4%;
+    z-index: 10;
+    width: 52px;
+    height: 52px;
+    font-size: 2rem;
+    box-shadow: transparent 1px 1px 1px 7px;
+    border-radius: 50%;
+    background: linear-gradient(#20c659, #a8e063);
+    padding: 9px 16px 14px 15px;
+}
+.profile_p{
+    font-size: 15px;
+    padding-left: 29px;
+    margin-top: 9px;
+}
+.profile_h6{
+    font-size: 17px;
+}
+.profile_icon{
+    font-size: 21px;
+    position: relative;
+    top: 5px;
+    margin-right: 5px;
+    color: #80e275;
+}
+.heading-title{
+    color: #6dd45e;
+}

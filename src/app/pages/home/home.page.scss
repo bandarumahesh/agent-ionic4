@@ -2,9 +2,29 @@
     display: flex;
     justify-content: center;
     text-align: center;
-    padding-top: 40px;
+    padding-top: 35%;
 }
 .ten_tom{
-    width: 58%;
+    // width: 58%;
+    // height: 10%;
+    width: 34%;
     height: 10%;
+    border-radius: 50%;
+}
+.agency_test{
+    text-align: center;
+    font-size: 25px;
+    font-weight: 500;
+    color: grey;
+}
+.trend_home{
+    padding: 10%;
+}
+.or_center{
+    color: grey;
+    font-weight: 700;
+    font-size: 13px;
+}
+#trend_logg_btn .button-native{
+    background: linear-gradient(to bottom, #4aad54, #a8e063);
 }
