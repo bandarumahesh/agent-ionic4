@@ -29,8 +29,8 @@ export class LoginPage implements OnInit {
   return = '';
   router_url: string;
   show = false;
-  passwordType: string = 'password';
-  passwordIcon: string = 'eye-off';
+  passwordType = 'password';
+  passwordIcon = 'eye-off';
 
   ngOnInit() {
     this.authState$ = this.authService.getAuthStateObserver();
@@ -52,14 +52,13 @@ console.log('hello', this.authState$);
       _ => this.router.navigateByUrl(this.router_url)
     );
   }
- 
+
   hideShowPassword() {
       this.passwordType = this.passwordType === 'text' ? 'password' : 'text';
       this.passwordIcon = this.passwordIcon === 'eye-off' ? 'eye' : 'eye-off';
   }
-  userLogin(userdata){
-    console.log("hello",userdata)
-if(userdata.email && userdata.userPassword){
+  userLogin(userdata) {
+if (userdata.email && userdata.userPassword) {
   this.router_url = '/membership';
   this.authService.login().then(
     _ => this.router.navigateByUrl(this.router_url)

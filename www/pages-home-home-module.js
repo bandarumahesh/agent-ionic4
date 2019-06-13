@@ -61,7 +61,7 @@ var HomePageModule = /** @class */ (function () {
 /*! no static exports found */
 /***/ (function(module, exports) {
 
-module.exports = "<ion-content padding>\n  <div class=\"trend_home\">\n    <div class=\"regis-header\">\n      <img src=\"assets/imgs/icon.png\" class=\"ten_tom\" />\n    </div>\n    <p class=\"agency_test\">Property Agency</p>\n    <ion-button expand=\"full\" id=\"trend_logg_btn\" shape=\"round\" color=\"primary\" (click)=\"signIn()\">Sign In</ion-button>\n    <p class=\"or_center\" text-center>OR</p>\n    <ion-button expand=\"full\" id=\"trend_logg_btn\" shape=\"round\" color=\"primary\" (click)=\"signUp()\">Sign Up</ion-button>\n  </div>\n</ion-content>\n<!-- expand=\"block\" -->\n"
+module.exports = "<ion-content padding>\n  <div class=\"trend_home\">\n    <div class=\"regis-header\">\n      <img src=\"assets/imgs/icon.png\" class=\"ten_tom\" />\n    </div>\n    <p class=\"agency_test\">Property Agency</p>\n    <ion-button expand=\"full\" id=\"trend_logg_btn\" shape=\"round\" color=\"primary\" (click)=\"signIn()\">\n        <ion-ripple-effect></ion-ripple-effect>Sign In</ion-button>\n    <p class=\"or_center\" text-center>OR</p>\n    <ion-button expand=\"full\" id=\"trend_logg_btn\" shape=\"round\" color=\"primary\" (click)=\"signUp()\">  <ion-ripple-effect type=\"unbounded\"></ion-ripple-effect>Sign Up</ion-button>\n  </div>\n</ion-content>\n<!-- expand=\"block\" -->\n"
 
 /***/ }),
 

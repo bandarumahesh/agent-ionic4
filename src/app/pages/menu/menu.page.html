@@ -1,9 +1,6 @@
-<ion-split-pane>
+<!-- <ion-split-pane>
   <ion-menu contentId="content">
     <ion-header>
-      <!-- <ion-toolbar color="primary">
-        <ion-title>Menu</ion-title>
-      </ion-toolbar> -->
       <ion-menu-toggle auto-hide="false">
       <div class="profile profile_new" routerDirection="root"  [routerLink]="['/menu/profile']" routerLinkActive="router-link-active" >
         <img  class="user-img" alt="profile-pic "  [src]="userData.imagePath ? userData.imagePath : 'assets/imgs/profilepic.svg'">
@@ -23,10 +20,6 @@
             </ion-label>
           </ion-item>
         </ion-menu-toggle> 
-        <!-- <ion-item tappable routerLink="/login" routerDirection="root">
-          <ion-icon name="log-out" slot="start"></ion-icon>
-          Logout
-        </ion-item> -->
         <ion-item tappable (click)="logout()" routerDirection="root">
           <ion-icon name="log-out" slot="start"></ion-icon>
           Logout
@@ -35,4 +28,5 @@
     </ion-content>
   </ion-menu>
   <ion-router-outlet id="content" main></ion-router-outlet>
-</ion-split-pane>
+</ion-split-pane> -->
+<ion-router-outlet id="content" main></ion-router-outlet>

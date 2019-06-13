@@ -11,7 +11,6 @@ import { DataResolverService } from './resolver/data-resolver.service';
 import { DataService } from './services/data.service';
 import { HttpClientModule, HTTP_INTERCEPTORS } from '@angular/common/http';
 import { MyHttpInterceptor } from './core/auth/http.interceptor';
-
 @NgModule({
   declarations: [AppComponent],
   entryComponents: [],

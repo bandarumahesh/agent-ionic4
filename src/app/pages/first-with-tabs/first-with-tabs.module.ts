@@ -2,10 +2,10 @@ import { NgModule } from '@angular/core';
 import { CommonModule } from '@angular/common';
 import { FormsModule } from '@angular/forms';
 import { Routes, RouterModule } from '@angular/router';
-
 import { IonicModule } from '@ionic/angular';
-
 import { FirstWithTabsPage } from './first-with-tabs.page';
+
+
 
 const routes: Routes = [
   {
@@ -13,34 +13,55 @@ const routes: Routes = [
     component: FirstWithTabsPage,
     children: [
       {
-        path: 'tab1',
-        loadChildren: '../tab1/tab1.module#Tab1PageModule'
+        path: 'Dashboard',
+        loadChildren: '../agency-dashboard/agency-dashboard.module#AgencyDashboardPageModule'
+      },
+      // {
+      //   path: 'tab1/details',
+      //   loadChildren: '../details/details.module#DetailsPageModule'
+      // },
+      {
+        path: 'Properties',
+        loadChildren: '../properties/properties.module#PropertiesPageModule'
+        // properties
       },
       {
-        path: 'tab1/details',
-        loadChildren: '../details/details.module#DetailsPageModule'
+        path: 'Properties/addProperty',
+        loadChildren: '../add-new-property/add-new-property.module#AddNewPropertyPageModule'
       },
       {
-        path: 'tab2',
-        loadChildren: '../tab2/tab2.module#Tab2PageModule'
+        path: 'Agents',
+        loadChildren: '../agents/agents.module#AgentsPageModule'
       },
       {
-        path: 'tab2/add-user',
-        loadChildren: '../add-user/add-user.module#AddUserPageModule'
+        path: 'Agents/addAgents',
+        loadChildren: '../add-agents/add-agents.module#AddAgentsPageModule'
       },
       {
-        path: 'tab3',
-        loadChildren: '../tab3/tab3.module#Tab3PageModule'
+        path: 'Chat',
+        loadChildren: '../agents/agents.module#AgentsPageModule'
+      },
+      {
+        path: 'Dashboard/profile',
+        loadChildren: '../../profile/profile.module#ProfilePageModule'
+      },
+      {
+        path: 'Dashboard/contacts',
+        loadChildren: '../contacts/contacts.module#ContactsPageModule'
+      },
+      {
+        path: 'Dashboard/settings',
+        loadChildren: '../settings/settings.module#SettingsPageModule'
       }
     ]
-  }, 
+  },
   {
     path: '',
-    redirectTo: 'tabs/tab1',
+    redirectTo: 'tabs/Dashboard',
     pathMatch: 'full'
   }
 ];
- 
+
 @NgModule({
   imports: [
     CommonModule,

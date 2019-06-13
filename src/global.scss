@@ -10,7 +10,47 @@
 @import '~@ionic/angular/css/text-transformation.css';
 @import '~@ionic/angular/css/flex-utils.css';
  
+//back arrow start
+.back_arrow_common{
+    font-size: 33px;
+}
+//back arrow end
 
+// global modules menus start
+
+.side_menuStl{
+    background: transparent;
+    /* width: 118px; */
+    float: right;
+    height: 55px;
+    padding-top: 8px;
+    padding-right: 10px;
+}
+.menu_tile{
+    height: 65px;
+}
+.menu_iconss{
+    position: relative;
+    top: 10px;
+    font-size: 34px;
+    left: 14px;
+}
+.name_menu{
+    position: relative;
+    top: -15px;
+    left: 6px;
+    font-weight: 500;
+}
+.menu_select{
+    height: 0px;
+    position: relative;
+    top: -27px;
+    /* padding: 20px; */
+    /* width: 120px; */
+    left: 27px;
+}
+
+// global module menus end here
 :host(.ion-focused) .item-native {
     background: #fdfdfd;
 }

@@ -93,7 +93,8 @@ wizardStep = 1;
   public completeMembership(): void {
    this.storage.set('membership', 'completed').then(res => {
     });
-    this.router.navigateByUrl('/menu/agency-dashboard'); 
+    // this.router.navigateByUrl('/menu/agency-dashboard');
+    this.router.navigate(['/menu/first/tabs/Dashboard']);
   }
   gonext() {
 

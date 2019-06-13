@@ -10,31 +10,32 @@ import { AuthService } from '../../core/auth/auth.service';
 export class MenuPage implements OnInit {
  selectedPath = '';
 
-  pages = [
-    {
-      title: 'Dashboard',
-      url: '/menu/agency-dashboard'
-    }, {
-      title: 'Properties',
-      url: '/menu/first'
-    },
-    {
-      title: 'Revenues',
-      url: '/menu/second'
-    },
-    {
-      title: 'Agents',
-      url: '/menu/second'
-    },
-    {
-      title: 'Contacts',
-     url: '/menu/second'
-    },
-    {
-      title: 'Settings',
-     url: '/menu/second'
-    }
-  ];
+  // pages = [
+  //   {
+  //     title: 'Dashboard',
+  //     url: '/menu/agency-dashboard'
+  //   },
+  //   {
+  //     title: 'Properties',
+  //     url: '/menu/first'
+  //   },
+  //   {
+  //     title: 'Revenues',
+  //     url: '/menu/revenues'
+  //   },
+  //   {
+  //     title: 'Agents',
+  //     url: '/menu/agents'
+  //   },
+  //   {
+  //     title: 'Contacts',
+  //    url: '/menu/contacts'
+  //   },
+  //   {
+  //     title: 'Settings',
+  //    url: '/menu/second'
+  //   }
+  // ];
   userData: any = {'name': 'Aj Chand', 'imagePath': null};
   constructor(private router: Router,  private authService: AuthService, ) {
     this.router.events.subscribe((event: RouterEvent) => {
@@ -43,7 +44,6 @@ export class MenuPage implements OnInit {
       }
     });
   }
-
   ngOnInit() {
 
   }

@@ -1,0 +1,42 @@
+<!-- <ion-split-pane>
+  <ion-menu contentId="content">
+    <ion-header>
+    <ion-toolbar color="primary">
+        <ion-title>Menu</ion-title>
+      </ion-toolbar> 
+      <ion-menu-toggle auto-hide="false">
+      <div class="profile profile_new" routerDirection="root"  [routerLink]="['/menu/profile']" routerLinkActive="router-link-active" >
+        <img  class="user-img" alt="profile-pic "  [src]="userData.imagePath ? userData.imagePath : 'assets/imgs/profilepic.svg'">
+      
+              
+              <p *ngIf="userData.name"><span style="margin-left: 16px;margin-right: 4px;">Hi</span> {{userData.name}}</p>
+
+        </div>
+        </ion-menu-toggle>
+    </ion-header>
+    <ion-content>
+      <ion-list>
+        <ion-menu-toggle auto-hide="false" *ngFor="let p of pages">
+          <ion-item [routerLink]="p.url" routerDirection="root" [class.active-item]="selectedPath.startsWith(p.url)">
+            <ion-label>
+              {{ p.title }}
+            </ion-label>
+          </ion-item>
+        </ion-menu-toggle> 
+       <ion-item tappable routerLink="/login" routerDirection="root">
+          <ion-icon name="log-out" slot="start"></ion-icon>
+          Logout
+        </ion-item>
+        <ion-item tappable (click)="logout()" routerDirection="root">
+          <ion-icon name="log-out" slot="start"></ion-icon>
+          Logout
+        </ion-item>
+      </ion-list>
+    </ion-content>
+  </ion-menu>
+
+ 
+</ion-split-pane> -->
+hello
+
+<ion-router-outlet id="content" main></ion-router-outlet>

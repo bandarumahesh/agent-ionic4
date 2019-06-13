@@ -1,13 +1,13 @@
-import { Component } from "@angular/core";
-import { Platform } from "@ionic/angular";
-import { SplashScreen } from "@ionic-native/splash-screen/ngx";
-import { StatusBar } from "@ionic-native/status-bar/ngx";
-import { AuthService } from "../app/core/auth/auth.service";
-import { Router } from "@angular/router";
-import { Storage } from "@ionic/storage";
+import { Component } from '@angular/core';
+import { Platform } from '@ionic/angular';
+import { SplashScreen } from '@ionic-native/splash-screen/ngx';
+import { StatusBar } from '@ionic-native/status-bar/ngx';
+import { AuthService } from '../app/core/auth/auth.service';
+import { Router } from '@angular/router';
+import { Storage } from '@ionic/storage';
 @Component({
-  selector: "app-root",
-  templateUrl: "app.component.html"
+  selector: 'app-root',
+  templateUrl: 'app.component.html'
 })
 export class AppComponent {
   globaldata: any = {};
@@ -26,17 +26,18 @@ export class AppComponent {
       this.statusBar.styleLightContent();
       this.splashScreen.hide();
       this.authService.authState$.subscribe(state => {
- 
-if( state === true){
+
+if ( state === true) {
   // this.router.navigate(["membership"]);
-  this.router.navigate(["/menu/agency-dashboard"]);
-  
-}else {
-    console.log("hello222");
-    this.router.navigate(["home"]);
+  // this.router.navigate(["/menu/agency-dashboard"]);
+  this.router.navigate(['/menu/first/tabs/Dashboard']);
+
+} else {
+    console.log('hello222');
+    this.router.navigate(['home']);
   }
 
-       
+
       });
     });
   }
@@ -71,5 +72,5 @@ if( state === true){
 //     this.router.navigate(["home"]);
 //   }
 
-       
+
 //       });
