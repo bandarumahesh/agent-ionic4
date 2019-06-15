@@ -151,7 +151,6 @@ var LoginPage = /** @class */ (function () {
     };
     LoginPage.prototype.userLogin = function (userdata) {
         var _this = this;
-        console.log("hello", userdata);
         if (userdata.email && userdata.userPassword) {
             this.router_url = '/membership';
             this.authService.login().then(function (_) { return _this.router.navigateByUrl(_this.router_url); });

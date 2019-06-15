@@ -837,49 +837,89 @@ module.exports = webpackAsyncContext;
 /***/ (function(module, exports, __webpack_require__) {
 
 var map = {
+	"../../../profile/profile.module": [
+		"./src/app/profile/profile.module.ts",
+		"profile-profile-module"
+	],
+	"../../add-agents/add-agents.module": [
+		"./src/app/pages/add-agents/add-agents.module.ts",
+		"add-agents-add-agents-module"
+	],
+	"../../agency-dashboard/agency-dashboard.module": [
+		"./src/app/pages/agency-dashboard/agency-dashboard.module.ts",
+		"agency-dashboard-agency-dashboard-module"
+	],
+	"../../agents/agents.module": [
+		"./src/app/pages/agents/agents.module.ts",
+		"agents-agents-module"
+	],
+	"../../contacts/contacts.module": [
+		"./src/app/pages/contacts/contacts.module.ts",
+		"contacts-contacts-module"
+	],
 	"../../profile/profile.module": [
 		"./src/app/profile/profile.module.ts",
-		"common"
+		"profile-profile-module"
 	],
-	"../add-user/add-user.module": [
-		"./src/app/pages/add-user/add-user.module.ts",
-		"add-user-add-user-module"
+	"../../revenues/revenues.module": [
+		"./src/app/pages/revenues/revenues.module.ts",
+		"revenues-revenues-module"
+	],
+	"../../second/second.module": [
+		"./src/app/pages/second/second.module.ts",
+		"second-second-module"
+	],
+	"../add-agents/add-agents.module": [
+		"./src/app/pages/add-agents/add-agents.module.ts",
+		"add-agents-add-agents-module"
+	],
+	"../add-new-property/add-new-property.module": [
+		"./src/app/pages/add-new-property/add-new-property.module.ts",
+		"add-new-property-add-new-property-module"
 	],
 	"../agency-dashboard/agency-dashboard.module": [
 		"./src/app/pages/agency-dashboard/agency-dashboard.module.ts",
 		"agency-dashboard-agency-dashboard-module"
 	],
-	"../details/details.module": [
-		"./src/app/pages/details/details.module.ts",
-		"details-details-module"
+	"../agents/agents.module": [
+		"./src/app/pages/agents/agents.module.ts",
+		"agents-agents-module"
+	],
+	"../contacts/contacts.module": [
+		"./src/app/pages/contacts/contacts.module.ts",
+		"contacts-contacts-module"
 	],
 	"../first-with-tabs/first-with-tabs.module": [
 		"./src/app/pages/first-with-tabs/first-with-tabs.module.ts",
 		"first-with-tabs-first-with-tabs-module"
 	],
-	"../second/second.module": [
-		"./src/app/pages/second/second.module.ts",
-		"second-second-module"
+	"../properties/properties.module": [
+		"./src/app/pages/properties/properties.module.ts",
+		"properties-properties-module"
 	],
-	"../tab1/tab1.module": [
-		"./src/app/pages/tab1/tab1.module.ts",
-		"tab1-tab1-module"
+	"../settings/settings.module": [
+		"./src/app/pages/settings/settings.module.ts",
+		"settings-settings-module"
 	],
-	"../tab2/tab2.module": [
-		"./src/app/pages/tab2/tab2.module.ts",
-		"tab2-tab2-module"
+	"../subMenuTabs/subMenuTabs.module": [
+		"./src/app/pages/submenu/subMenuTabs/subMenuTabs.module.ts",
+		"subMenuTabs-subMenuTabs-module"
 	],
-	"../tab3/tab3.module": [
-		"./src/app/pages/tab3/tab3.module.ts",
-		"tab3-tab3-module"
+	"../subtab1/subtab1.module": [
+		"./src/app/pages/submenu/subtab1/subtab1.module.ts",
+		"subtab1-subtab1-module"
+	],
+	"../subtab2/subtab2.module": [
+		"./src/app/pages/submenu/subtab2/subtab2.module.ts",
+		"subtab2-subtab2-module"
+	],
+	"../subtab3/subtab3.module": [
+		"./src/app/pages/submenu/subtab3/subtab3.module.ts",
+		"subtab3-subtab3-module"
 	],
 	"./forgot-password/forgot-password.module": [
 		"./src/app/forgot-password/forgot-password.module.ts",
 		"forgot-password-forgot-password-module"
-	],
-	"./pages/agency-dashboard/agency-dashboard.module": [
-		"./src/app/pages/agency-dashboard/agency-dashboard.module.ts",
-		"agency-dashboard-agency-dashboard-module"
 	],
 	"./pages/home/home.module": [
 		"./src/app/pages/home/home.module.ts",
@@ -895,8 +935,11 @@ var map = {
 	],
 	"./pages/menu/menu.module": [
 		"./src/app/pages/menu/menu.module.ts",
-		"common",
 		"pages-menu-menu-module"
+	],
+	"./pages/submenu/submenu/submenu.module": [
+		"./src/app/pages/submenu/submenu/submenu.module.ts",
+		"pages-submenu-submenu-submenu-module"
 	],
 	"./sign-up/sign-up.module": [
 		"./src/app/sign-up/sign-up.module.ts",
@@ -912,7 +955,7 @@ function webpackAsyncContext(req) {
 			throw e;
 		});
 	}
-	return Promise.all(ids.slice(1).map(__webpack_require__.e)).then(function() {
+	return __webpack_require__.e(ids[1]).then(function() {
 		var id = ids[0];
 		return __webpack_require__(id);
 	});
@@ -955,6 +998,8 @@ var routes = [
     { path: 'login', loadChildren: './pages/login/login.module#LoginPageModule' },
     { path: 'signup', loadChildren: './sign-up/sign-up.module#SignUpPageModule' },
     { path: 'menu', canActivate: [_core_auth_auth_guard__WEBPACK_IMPORTED_MODULE_2__["AuthGuard"]], loadChildren: './pages/menu/menu.module#MenuPageModule' },
+    { path: 'submenu', canActivate: [_core_auth_auth_guard__WEBPACK_IMPORTED_MODULE_2__["AuthGuard"]], loadChildren: './pages/submenu/submenu/submenu.module#SubMenuPageModule' },
+    { path: 'forgot-password', loadChildren: './forgot-password/forgot-password.module#ForgotPasswordPageModule' },
     // { path: 'first-with-tabs', loadChildren: './pages/first-with-tabs/first-with-tabs.module#FirstWithTabsPageModule' },
     // { path: 'second', loadChildren: './pages/second/second.module#SecondPageModule' },
     // { path: 'tab1', loadChildren: './pages/tab1/tab1.module#Tab1PageModule' },
@@ -963,17 +1008,8 @@ var routes = [
     // { path: 'details', loadChildren: './pages/details/details.module#DetailsPageModule' },
     // { path: 'add-user', loadChildren: './pages/add-user/add-user.module#AddUserPageModule' },
     { path: 'membership',
-        //   canActivate: [AuthGuard], loadChildren: './pages/membership-for-agency/membership-for-agency.module#MembershipForAgencyPageModule' },
-        // { path: 'membership/:id',
-        // resolve:{
-        //   special:DataResolverService
-        // },
         canActivate: [_core_auth_auth_guard__WEBPACK_IMPORTED_MODULE_2__["AuthGuard"]],
         loadChildren: './pages/membership-for-agency/membership-for-agency.module#MembershipForAgencyPageModule' },
-    { path: 'membership/:id', canActivate: [_core_auth_auth_guard__WEBPACK_IMPORTED_MODULE_2__["AuthGuard"]],
-        loadChildren: './pages/membership-for-agency/membership-for-agency.module#MembershipForAgencyPageModule' },
-    { path: 'forgot-password', loadChildren: './forgot-password/forgot-password.module#ForgotPasswordPageModule' },
-    { path: 'agency-dashboard', loadChildren: './pages/agency-dashboard/agency-dashboard.module#AgencyDashboardPageModule' },
 ];
 // canActivate: [AuthGuard],
 var AppRoutingModule = /** @class */ (function () {
@@ -1055,18 +1091,19 @@ var AppComponent = /** @class */ (function () {
             _this.authService.authState$.subscribe(function (state) {
                 if (state === true) {
                     // this.router.navigate(["membership"]);
-                    _this.router.navigate(["/menu/agency-dashboard"]);
+                    // this.router.navigate(["/menu/agency-dashboard"]);
+                    _this.router.navigate(['/menu/first/tabs/Dashboard']);
                 }
                 else {
-                    console.log("hello222");
-                    _this.router.navigate(["home"]);
+                    console.log('hello222');
+                    _this.router.navigate(['home']);
                 }
             });
         });
     };
     AppComponent = __decorate([
         Object(_angular_core__WEBPACK_IMPORTED_MODULE_0__["Component"])({
-            selector: "app-root",
+            selector: 'app-root',
             template: __webpack_require__(/*! ./app.component.html */ "./src/app/app.component.html")
         }),
         __metadata("design:paramtypes", [_app_core_auth_auth_service__WEBPACK_IMPORTED_MODULE_4__["AuthService"],

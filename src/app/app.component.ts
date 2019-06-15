@@ -19,26 +19,25 @@ export class AppComponent {
     private statusBar: StatusBar,
     private storage: Storage
   ) {
+    this.authService.authState$.subscribe(state => {
+
+      if ( state === true) {
+        // this.router.navigate(["membership"]);
+        // this.router.navigate(["/menu/agency-dashboard"]);
+        this.router.navigate(['/menu/first/tabs/Dashboard']);
+      } else {
+          console.log('hello222');
+          this.router.navigate(['home']);
+        }
+
+            });
     this.initializeApp();
   }
   initializeApp() {
     this.platform.ready().then(() => {
       this.statusBar.styleLightContent();
       this.splashScreen.hide();
-      this.authService.authState$.subscribe(state => {
 
-if ( state === true) {
-  // this.router.navigate(["membership"]);
-  // this.router.navigate(["/menu/agency-dashboard"]);
-  this.router.navigate(['/menu/first/tabs/Dashboard']);
-
-} else {
-    console.log('hello222');
-    this.router.navigate(['home']);
-  }
-
-
-      });
     });
   }
 }

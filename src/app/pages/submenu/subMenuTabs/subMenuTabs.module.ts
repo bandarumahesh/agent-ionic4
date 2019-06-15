@@ -14,18 +14,18 @@ const routes: Routes = [
         path: 'tab1',
         loadChildren: '../subtab1/subtab1.module#SubTab1PageModule'
       },
-      {
-        path: 'tab1/details',
-        loadChildren: '../details/details.module#DetailsPageModule'
-      },
+      // {
+      //   path: 'tab1/details',
+      //   loadChildren: '../details/details.module#DetailsPageModule'
+      // },
       {
         path: 'tab2',
         loadChildren: '../subtab2/subtab2.module#SubTab2PageModule'
       },
-      {
-        path: 'tab2/add-user',
-        loadChildren: '../add-user/add-user.module#AddUserPageModule'
-      },
+      // {
+      //   path: 'tab2/add-user',
+      //   loadChildren: '../add-user/add-user.module#AddUserPageModule'
+      // },
       {
         path: 'tab3',
         loadChildren: '../subtab3/subtab3.module#SubTab3PageModule'

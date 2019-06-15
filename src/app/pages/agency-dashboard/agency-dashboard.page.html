@@ -6,7 +6,7 @@
       <ion-title>DASHBOARD</ion-title>
       <div  class="side_menuStl">
           <ion-label>
-                    <img id="menu_forGlobal"  src="https://ionicframework.com/docs/demos/api/card/madison.jpg" style="width:40px;border-radius: 50%;height:40px;"/>
+                    <img id="menu_forGlobal"  src="https://ionicframework.com/docs/demos/api/card/madison.jpg" class="headerProfile_img"/>
                    <span class="name_menu">AJ Chand</span>
                  <ion-select class="menu_select" style="height: 0px;"  [(ngModel)]="selectedMenu" (ionChange)="selectMenuOptions($event.target.value)" multiple="false" interface="popover">
                    <ion-select-option *ngFor="let menu of menuOptions" [value]="menu" >{{menu}}</ion-select-option>

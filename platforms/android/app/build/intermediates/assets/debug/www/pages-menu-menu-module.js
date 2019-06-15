@@ -16,7 +16,6 @@ __webpack_require__.r(__webpack_exports__);
 /* harmony import */ var _angular_router__WEBPACK_IMPORTED_MODULE_3__ = __webpack_require__(/*! @angular/router */ "./node_modules/@angular/router/fesm5/router.js");
 /* harmony import */ var _ionic_angular__WEBPACK_IMPORTED_MODULE_4__ = __webpack_require__(/*! @ionic/angular */ "./node_modules/@ionic/angular/dist/fesm5.js");
 /* harmony import */ var _menu_page__WEBPACK_IMPORTED_MODULE_5__ = __webpack_require__(/*! ./menu.page */ "./src/app/pages/menu/menu.page.ts");
-/* harmony import */ var _profile_profile_module__WEBPACK_IMPORTED_MODULE_6__ = __webpack_require__(/*! ../../profile/profile.module */ "./src/app/profile/profile.module.ts");
 var __decorate = (undefined && undefined.__decorate) || function (decorators, target, key, desc) {
     var c = arguments.length, r = c < 3 ? target : desc === null ? desc = Object.getOwnPropertyDescriptor(target, key) : desc, d;
     if (typeof Reflect === "object" && typeof Reflect.decorate === "function") r = Reflect.decorate(decorators, target, key, desc);
@@ -29,33 +28,35 @@ var __decorate = (undefined && undefined.__decorate) || function (decorators, ta
 
 
 
-
-_profile_profile_module__WEBPACK_IMPORTED_MODULE_6__["ProfilePageModule"];
 var routes = [
     {
         path: '',
         component: _menu_page__WEBPACK_IMPORTED_MODULE_5__["MenuPage"],
         children: [
-            { path: 'agency-dashboard',
-                loadChildren: '../agency-dashboard/agency-dashboard.module#AgencyDashboardPageModule' },
+            // { path: 'agency-dashboard',
+            // loadChildren: '../agency-dashboard/agency-dashboard.module#AgencyDashboardPageModule' },
             {
                 path: 'first',
                 loadChildren: '../first-with-tabs/first-with-tabs.module#FirstWithTabsPageModule'
             },
-            {
-                path: 'second',
-                loadChildren: '../second/second.module#SecondPageModule'
-            },
-            {
-                path: 'second/details',
-                loadChildren: '../details/details.module#DetailsPageModule'
-            },
-            { path: 'profile',
-                loadChildren: '../../profile/profile.module#ProfilePageModule'
-            },
-            { path: 'profile/details',
-                loadChildren: '../../profile/profile.module#ProfilePageModule'
-            },
+            //   {
+            //     path: 'second',
+            //     loadChildren: '../second/second.module#SecondPageModule'
+            //   },
+            //   {
+            //     path: 'second/details',
+            //     loadChildren: '../details/details.module#DetailsPageModule'
+            //   },
+            //   { path: 'profile',
+            //   loadChildren: '../../profile/profile.module#ProfilePageModule'
+            //  },
+            //  ,
+            //   { path: 'profile/details',
+            //   loadChildren: '../../profile/profile.module#ProfilePageModule'
+            //  },
+            //  { path: 'revenues', loadChildren: '../revenues/revenues.module#RevenuesPageModule' },
+            //  { path: 'agents', loadChildren: '../agents/agents.module#AgentsPageModule' },
+            { path: 'contacts', loadChildren: '../contacts/contacts.module#ContactsPageModule' },
         ]
     }
 ];
@@ -87,7 +88,7 @@ var MenuPageModule = /** @class */ (function () {
 /*! no static exports found */
 /***/ (function(module, exports) {
 
-module.exports = "<ion-split-pane>\n  <ion-menu contentId=\"content\">\n    <ion-header>\n      <!-- <ion-toolbar color=\"primary\">\n        <ion-title>Menu</ion-title>\n      </ion-toolbar> -->\n      <ion-menu-toggle auto-hide=\"false\">\n      <div class=\"profile profile_new\" routerDirection=\"root\"  [routerLink]=\"['/menu/profile']\" routerLinkActive=\"router-link-active\" >\n        <img  class=\"user-img\" alt=\"profile-pic \"  [src]=\"userData.imagePath ? userData.imagePath : 'assets/imgs/profilepic.svg'\">\n      \n              \n              <p *ngIf=\"userData.name\"><span style=\"margin-left: 16px;margin-right: 4px;\">Hi</span> {{userData.name}}</p>\n\n        </div>\n        </ion-menu-toggle>\n    </ion-header>\n    <ion-content>\n      <ion-list>\n        <ion-menu-toggle auto-hide=\"false\" *ngFor=\"let p of pages\">\n          <ion-item [routerLink]=\"p.url\" routerDirection=\"root\" [class.active-item]=\"selectedPath.startsWith(p.url)\">\n            <ion-label>\n              {{ p.title }}\n            </ion-label>\n          </ion-item>\n        </ion-menu-toggle> \n        <!-- <ion-item tappable routerLink=\"/login\" routerDirection=\"root\">\n          <ion-icon name=\"log-out\" slot=\"start\"></ion-icon>\n          Logout\n        </ion-item> -->\n        <ion-item tappable (click)=\"logout()\" routerDirection=\"root\">\n          <ion-icon name=\"log-out\" slot=\"start\"></ion-icon>\n          Logout\n        </ion-item>\n      </ion-list>\n    </ion-content>\n  </ion-menu>\n  <ion-router-outlet id=\"content\" main></ion-router-outlet>\n</ion-split-pane>"
+module.exports = "<!-- <ion-split-pane>\n  <ion-menu contentId=\"content\">\n    <ion-header>\n      <ion-menu-toggle auto-hide=\"false\">\n      <div class=\"profile profile_new\" routerDirection=\"root\"  [routerLink]=\"['/menu/profile']\" routerLinkActive=\"router-link-active\" >\n        <img  class=\"user-img\" alt=\"profile-pic \"  [src]=\"userData.imagePath ? userData.imagePath : 'assets/imgs/profilepic.svg'\">\n      \n              \n              <p *ngIf=\"userData.name\"><span style=\"margin-left: 16px;margin-right: 4px;\">Hi</span> {{userData.name}}</p>\n\n        </div>\n        </ion-menu-toggle>\n    </ion-header>\n    <ion-content>\n      <ion-list>\n        <ion-menu-toggle auto-hide=\"false\" *ngFor=\"let p of pages\">\n          <ion-item [routerLink]=\"p.url\" routerDirection=\"root\" [class.active-item]=\"selectedPath.startsWith(p.url)\">\n            <ion-label>\n              {{ p.title }}\n            </ion-label>\n          </ion-item>\n        </ion-menu-toggle> \n        <ion-item tappable (click)=\"logout()\" routerDirection=\"root\">\n          <ion-icon name=\"log-out\" slot=\"start\"></ion-icon>\n          Logout\n        </ion-item>\n      </ion-list>\n    </ion-content>\n  </ion-menu>\n  <ion-router-outlet id=\"content\" main></ion-router-outlet>\n</ion-split-pane> -->\n<ion-router-outlet id=\"content\" main></ion-router-outlet>"
 
 /***/ }),
 
@@ -133,31 +134,32 @@ var MenuPage = /** @class */ (function () {
         this.router = router;
         this.authService = authService;
         this.selectedPath = '';
-        this.pages = [
-            {
-                title: 'Dashboard',
-                url: '/menu/agency-dashboard'
-            }, {
-                title: 'Properties',
-                url: '/menu/first'
-            },
-            {
-                title: 'Revenues',
-                url: '/menu/second'
-            },
-            {
-                title: 'Agents',
-                url: '/menu/second'
-            },
-            {
-                title: 'Contacts',
-                url: '/menu/second'
-            },
-            {
-                title: 'Settings',
-                url: '/menu/second'
-            }
-        ];
+        // pages = [
+        //   {
+        //     title: 'Dashboard',
+        //     url: '/menu/agency-dashboard'
+        //   },
+        //   {
+        //     title: 'Properties',
+        //     url: '/menu/first'
+        //   },
+        //   {
+        //     title: 'Revenues',
+        //     url: '/menu/revenues'
+        //   },
+        //   {
+        //     title: 'Agents',
+        //     url: '/menu/agents'
+        //   },
+        //   {
+        //     title: 'Contacts',
+        //    url: '/menu/contacts'
+        //   },
+        //   {
+        //     title: 'Settings',
+        //    url: '/menu/second'
+        //   }
+        // ];
         this.userData = { 'name': 'Aj Chand', 'imagePath': null };
         this.router.events.subscribe(function (event) {
             if (event && event.url) {

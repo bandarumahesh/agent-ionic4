@@ -234,7 +234,8 @@ var MembershipForAgencyPage = /** @class */ (function () {
     MembershipForAgencyPage.prototype.completeMembership = function () {
         this.storage.set('membership', 'completed').then(function (res) {
         });
-        this.router.navigateByUrl('/menu/agency-dashboard');
+        // this.router.navigateByUrl('/menu/agency-dashboard');
+        this.router.navigate(['/menu/first/tabs/Dashboard']);
     };
     MembershipForAgencyPage.prototype.gonext = function () {
         if (this.wizardStep == 2) {

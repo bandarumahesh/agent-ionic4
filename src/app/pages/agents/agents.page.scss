@@ -1,0 +1,32 @@
+.list_item{
+    position: relative;
+}
+.status_list{
+    // position: absolute;
+    // right: 20px;
+    // top: 6px;
+    // background: #aebdc7;
+    // padding: 7px 18px;
+    // border-radius: 14px;
+    // color: #fff;
+    // font-size: 11px;
+
+    position: absolute;
+    right: 20px;
+    top: 6px;
+    background: #ffffff;
+    padding: 7px 18px;
+    border-radius: 14px;
+    color: #272626;
+    font-size: 11px;
+    box-shadow: 1px 1px 1px 1px #efe9e9;
+}
+.agent_image{
+    border-radius: 50%;
+    width: 52px;
+    height: 52px;
+}
+
+    ion-item {
+        padding-bottom: 12px;
+}

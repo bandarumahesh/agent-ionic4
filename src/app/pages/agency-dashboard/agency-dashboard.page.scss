@@ -2,7 +2,22 @@
     border-top: 2px solid #3bdc7e;
 }
 
+ion-toolbar{
+    position: relative;
+}
+.title-md{
+    text-align: center !important;
+    font-size: 17px;
+    font-weight: 500;
 
+    // padding-right: 21% !important;
+}
+ion-title{
+    text-align: center !important;
+    font-size: 17px;
+    font-weight: 500;
+
+}
 .right_alignflot{
     // float: right;
     // font-size: 18px;

@@ -3,7 +3,7 @@ import { Storage } from '@ionic/storage';
 import { Injectable } from '@angular/core';
 import { BehaviorSubject, Observable } from 'rxjs';
 import { Router } from '@angular/router';
-import { HttpClient } from  '@angular/common/http';
+import { HttpClient } from '@angular/common/http';
 const TOKEN_KEY = 'X-Auth-Token';
 @Injectable({
   providedIn: 'root'

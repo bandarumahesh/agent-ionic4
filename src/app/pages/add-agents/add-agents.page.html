@@ -7,7 +7,17 @@
     </ion-toolbar>
   </ion-header>
 
-<ion-content padding>
-hello
+<ion-content >
+  <div class="profile_Mainview">
+    <div class="main-picsss" id="back-ground">
+          <img src="{{profilePicture}}" onerror="this.onerror=null;this.src='assets/imgs/profilepic.svg'" alt="Profile Pic">
+          <div class="red-cam" (click)="uploadPhoto()">
+            <ion-icon name="camera"></ion-icon>
+          </div>
+      </div>
+      <!-- <button class="editbtn" ion-button [routerLink]="['/membership/12']" routerDirection="forward"  (click)="editUserProfile()">
+          <img src="assets/icon/pencil.svg" width="60" />
+        </button> -->
+</div>
 </ion-content>
  

@@ -4,13 +4,41 @@
             <ion-back-button defaulthref=""></ion-back-button>
           </ion-buttons>
       <ion-title>AGENTS</ion-title>
+    
     </ion-toolbar>
   </ion-header>
 
-<ion-content padding>
+<ion-content >
+    <ion-toolbar>
+        <ion-searchbar  animated debounce="500" cancelButtonText="Custom Cancel"></ion-searchbar>
+      </ion-toolbar>
+
+      <!-- List of Sliding Items -->
+<ion-list>
+    <ion-item-sliding *ngFor="let item of items;  let i = index">
+        <ion-item class="list_item" (click)="agentFullView()">
+            <ion-thumbnail slot="start">
+              <!-- <img src="assets/imgs/profilepic.svg" class="agent_image"> -->
+              <img src="assets/icon/instarent_icon.png" class="agent_image">
+            </ion-thumbnail>
+            <ion-label>
+              <h4>Instarent Agent {{i}}</h4>
+              <p>properties 5</p>
+              <!-- <p><small>Requires text </small></p> -->
+            </ion-label>
+            <p class="status_list"> New</p>
+          </ion-item>
+      <ion-item-options side="end">
+        <ion-item-option (click)="unread(item)"><ion-icon name="trash"></ion-icon> Delete</ion-item-option>
+      </ion-item-options>
+    </ion-item-sliding>
+
+  </ion-list>
     <ion-fab vertical="bottom" horizontal="end" slot="fixed">
         <ion-fab-button [routerLink]="['/menu/first/tabs/Agents/addAgents']" routerLinkActive="router-link-active" >
           <ion-icon name="person-add"></ion-icon>
         </ion-fab-button>
       </ion-fab>
 </ion-content>
+
+

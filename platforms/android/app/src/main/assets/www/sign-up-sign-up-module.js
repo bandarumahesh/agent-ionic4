@@ -62,7 +62,7 @@ var SignUpPageModule = /** @class */ (function () {
 /*! no static exports found */
 /***/ (function(module, exports) {
 
-module.exports = "<ion-header>\n  <ion-toolbar color=\"primary\">\n      <ion-buttons slot=\"start\">\n          <ion-back-button defaulthref=\"\"></ion-back-button>\n        </ion-buttons>\n    <ion-title>REGISTRATION</ion-title>\n  </ion-toolbar>\n</ion-header>\n<ion-content  padding>\n  <div class=\"regis-header\">\n      <img src=\"assets/imgs/instarentlogoupdated.png\" class=\"ten_tom\" />\n  </div>\n  <form  #form=\"ngForm\" (ngSubmit)=\"register(form.value) \" method=\"POST\" >\n    <ion-grid>\n      <ion-row color=\"primary\" justify-content-center>\n        <ion-col align-self-center size-md=\"6\" size-lg=\"5\" size-xs=\"12\">\n          <div text-center>\n            <h3 class=\"header55\">Sign up as property agency</h3>\n          </div>\n          <div padding class=\"lable_float\">\n              <ion-item>\n                  <ion-label position=\"floating\" > <ion-icon  item-start name=\"person\"></ion-icon> Property Agency Name</ion-label>\n                  <ion-input name=\"businessName\" type=\"text\" autocomplete=\"off\" autocorrect=\"off\" autocapitalize=\"off\" spellcheck=\"false\" minlength=\"2\" maxlength=\"30\" ngModel required></ion-input>\n              </ion-item>\n              <ion-item>\n                  <ion-label position=\"floating\" > <ion-icon  item-start name=\"mail\" ></ion-icon>Business Email </ion-label>\n                  <ion-input type=\"email\" name=\"email\" ngModel required></ion-input>\n                </ion-item>\n            <ion-item class=\"f-item pad-pt\">\n              <ion-label position=\"floating\" ><ion-icon  item-start name=\"phone-portrait\"></ion-icon> Business Contact</ion-label>\n              <ion-input type=\"tel\" minlength=\"10\" ngModel  maxlength=\"10\" name=\"phoneNumber\" required></ion-input>\n            </ion-item>\n          </div>\n          <div padding>\n              <!-- size=\"large\" -->\n            <ion-button type=\"submit\" [disabled]=\"form.invalid\" expand=\"block\">  <ion-ripple-effect></ion-ripple-effect> Sign Up</ion-button>\n          </div>\n        </ion-col>\n      </ion-row>\n    </ion-grid>\n  </form>\n  <div class=\"signup\" style=\"display: inherit\">\n      <p class=\"connected\">Already have an account ? <strong class=\"ten_ser\" routerLink=\"/login\" >  Sign in</strong>\n      </p>\n    </div>\n</ion-content>"
+module.exports = "<ion-header>\n  <ion-toolbar color=\"primary\">\n      <ion-buttons slot=\"start\">\n          <ion-back-button defaulthref=\"\"></ion-back-button>\n        </ion-buttons>\n    <ion-title>REGISTRATION</ion-title>\n  </ion-toolbar>\n</ion-header>\n<ion-content  padding>\n  <div class=\"regis-header\">\n      <img src=\"assets/imgs/instarentlogoupdated.png\" class=\"ten_tom\" />\n  </div>\n  <form  #form=\"ngForm\" (ngSubmit)=\"register(form.value) \" method=\"POST\" >\n    <ion-grid>\n      <ion-row color=\"primary\" justify-content-center>\n        <ion-col align-self-center size-md=\"6\" size-lg=\"5\" size-xs=\"12\">\n          <div text-center>\n            <h3 class=\"header55\">Sign up as property agency</h3>\n          </div>\n          <div padding class=\"lable_float\">\n              <ion-item>\n                  <ion-label position=\"floating\" > <ion-icon  item-start name=\"person\"></ion-icon> Property Agency Name</ion-label>\n                  <ion-input name=\"businessName\" type=\"text\" autocomplete=\"off\" autocorrect=\"off\" autocapitalize=\"off\" spellcheck=\"false\" minlength=\"2\" maxlength=\"30\" ngModel required></ion-input>\n              </ion-item>\n              <ion-item>\n                  <ion-label position=\"floating\" > <ion-icon  item-start name=\"mail\" ></ion-icon>Business Email </ion-label>\n                  <ion-input type=\"email\" name=\"email\" ngModel required></ion-input>\n                </ion-item>\n            <ion-item class=\"f-item pad-pt\">\n              <ion-label position=\"floating\" ><ion-icon  item-start name=\"phone-portrait\"></ion-icon> Business Contact</ion-label>\n              <ion-input type=\"tel\" minlength=\"10\" ngModel  maxlength=\"10\" name=\"phoneNumber\" required></ion-input>\n            </ion-item>\n          </div>\n          <div padding>\n              <!-- size=\"large\" -->\n            <ion-button type=\"submit\" [disabled]=\"form.invalid\" expand=\"block\">  <ion-ripple-effect></ion-ripple-effect> Sign Up</ion-button>\n          </div>\n        </ion-col>\n      </ion-row>\n    </ion-grid>\n  </form>\n  <div class=\"signup\" style=\"display: inherit\">\n      <p class=\"connected\">Already have an account ? <strong class=\"ten_ser\" routerLink=\"/login\" >  Sign in</strong>\n      </p>\n    </div>\n</ion-content> "
 
 /***/ }),
 
@@ -89,6 +89,7 @@ __webpack_require__.r(__webpack_exports__);
 /* harmony export (binding) */ __webpack_require__.d(__webpack_exports__, "SignUpPage", function() { return SignUpPage; });
 /* harmony import */ var _angular_core__WEBPACK_IMPORTED_MODULE_0__ = __webpack_require__(/*! @angular/core */ "./node_modules/@angular/core/fesm5/core.js");
 /* harmony import */ var _angular_router__WEBPACK_IMPORTED_MODULE_1__ = __webpack_require__(/*! @angular/router */ "./node_modules/@angular/router/fesm5/router.js");
+/* harmony import */ var _core_auth_auth_service__WEBPACK_IMPORTED_MODULE_2__ = __webpack_require__(/*! ../core/auth/auth.service */ "./src/app/core/auth/auth.service.ts");
 var __decorate = (undefined && undefined.__decorate) || function (decorators, target, key, desc) {
     var c = arguments.length, r = c < 3 ? target : desc === null ? desc = Object.getOwnPropertyDescriptor(target, key) : desc, d;
     if (typeof Reflect === "object" && typeof Reflect.decorate === "function") r = Reflect.decorate(decorators, target, key, desc);
@@ -100,15 +101,18 @@ var __metadata = (undefined && undefined.__metadata) || function (k, v) {
 };
 
 
+
 var SignUpPage = /** @class */ (function () {
-    function SignUpPage(router) {
+    function SignUpPage(router, authService) {
         this.router = router;
+        this.authService = authService;
     }
     SignUpPage.prototype.ngOnInit = function () {
     };
     SignUpPage.prototype.register = function (form) {
-        console.log("formdata", form);
-        this.router.navigate(["/membership"]);
+        var _this = this;
+        this.router_url = '/membership';
+        this.authService.login().then(function (_) { return _this.router.navigateByUrl(_this.router_url); });
     };
     SignUpPage = __decorate([
         Object(_angular_core__WEBPACK_IMPORTED_MODULE_0__["Component"])({
@@ -116,7 +120,7 @@ var SignUpPage = /** @class */ (function () {
             template: __webpack_require__(/*! ./sign-up.page.html */ "./src/app/sign-up/sign-up.page.html"),
             styles: [__webpack_require__(/*! ./sign-up.page.scss */ "./src/app/sign-up/sign-up.page.scss")]
         }),
-        __metadata("design:paramtypes", [_angular_router__WEBPACK_IMPORTED_MODULE_1__["Router"]])
+        __metadata("design:paramtypes", [_angular_router__WEBPACK_IMPORTED_MODULE_1__["Router"], _core_auth_auth_service__WEBPACK_IMPORTED_MODULE_2__["AuthService"]])
     ], SignUpPage);
     return SignUpPage;
 }());

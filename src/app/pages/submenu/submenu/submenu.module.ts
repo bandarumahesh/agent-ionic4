@@ -16,7 +16,7 @@ const routes: Routes = [
     component: SubMenuPage,
     children: [
       { path: 'agency-dashboard',
-      loadChildren: '../../agency-dashboard/agency-dashboard.module#AgencFirstWithTabsPageModuleyDashboardPageModule' },
+      loadChildren: '../../agency-dashboard/agency-dashboard.module#AgencyDashboardPageModule' },
       {
         path: 'first',
         loadChildren: '../subMenuTabs/subMenuTabs.module#SubMenuTabsPageModule'

@@ -7,7 +7,6 @@ import { IonicModule } from '@ionic/angular';
 
 import { MenuPage } from './menu.page';
 import { AddAgentsPage } from '../add-agents/add-agents.page';
-
 const routes: Routes = [
   {
     path: '',
@@ -38,7 +37,7 @@ const routes: Routes = [
     //  { path: 'agents', loadChildren: '../agents/agents.module#AgentsPageModule' },
      { path: 'contacts', loadChildren: '../contacts/contacts.module#ContactsPageModule' },
     //  { path: 'add-agents', loadChildren: '../add-agents/add-agents.module#AddAgentsPageModule' },
-
+    { path: 'agent-full-view', loadChildren: '../agent-full-view/agent-full-view.module#AgentFullViewPageModule' },
     ]
   }
 ];

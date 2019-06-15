@@ -4,7 +4,6 @@ import { AuthGuard } from './core/auth/auth.guard';
 import { DataResolverService } from './resolver/data-resolver.service';
 // import { AuthGuard } from '@core/auth/auth.guard';
 
-
 const routes: Routes = [
   { path: '', redirectTo: 'home', pathMatch: 'full' },
   // { path: '', redirectTo: 'login', pathMatch: 'full' },
@@ -24,6 +23,7 @@ const routes: Routes = [
   { path: 'membership',
   canActivate: [AuthGuard],
   loadChildren: './pages/membership-for-agency/membership-for-agency.module#MembershipForAgencyPageModule' },
+  // { path: 'agent-full-view', loadChildren: './pages/agent-full-view/agent-full-view.module#AgentFullViewPageModule' },
   // { path: 'membership/:id', canActivate: [AuthGuard],
   // loadChildren: './pages/membership-for-agency/membership-for-agency.module#MembershipForAgencyPageModule' },
   // { path: 'agency-dashboard', loadChildren: './pages/agency-dashboard/agency-dashboard.module#AgencyDashboardPageModule' },

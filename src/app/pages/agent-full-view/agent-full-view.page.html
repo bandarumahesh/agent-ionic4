@@ -1,0 +1,88 @@
+<ion-header>
+  <ion-toolbar color="primary">
+      <!-- <ion-buttons slot="end">
+          <ion-back-button defaulthref="/menu/first/tabs/tab1/details"></ion-back-button>
+        </ion-buttons> -->
+        <ion-icon name="arrow-back" class="back_arrow_common"  routerLink="/menu/first/tabs/Agents"></ion-icon>
+    <ion-title>AGENT PROFILE</ion-title>
+  </ion-toolbar>
+</ion-header>
+
+<ion-content>
+  <div class="profile_Mainview">
+      <div class="main-picsss" id="back-ground">
+            <img src="{{profilePicture}}" onerror="this.onerror=null;this.src='assets/imgs/profilepic.svg'" alt="Profile Pic">
+            <!-- <div class="red-cam" (click)="uploadPhoto()">
+              <ion-icon name="camera"></ion-icon>
+            </div> -->
+        </div>
+        <button class="editbtn" ion-button [routerLink]="['/membership/12']" routerDirection="forward"  (click)="editUserProfile()">
+            <img src="assets/icon/pencil.svg" width="60" />
+          </button>
+  </div>
+  <ion-row class="details">
+      <ion-col>
+        <ion-list class="my-lst" lines="none">
+          <ion-item class="manage">
+            <h4 class="heading-title">Basic Details</h4>
+          </ion-item>
+          <ion-item>
+              <ion-label>
+            <h6 class="profile_h6"> <ion-icon class="profile_icon" name="person" item-start></ion-icon>Name</h6>
+            <p class="profile_p">John david</p>
+          </ion-label>
+          </ion-item>
+          <ion-item>
+            <ion-label>
+          <h6 class="profile_h6"> <ion-icon class="profile_icon" name="mail" item-start></ion-icon> Email</h6>
+          <p class="profile_p"> instarentagency@gmail.com</p>
+        </ion-label>
+        </ion-item>
+        <ion-item>
+            <ion-label>
+          <h6 class="profile_h6"> <ion-icon class="profile_icon" name="call" item-start></ion-icon> Mobile Number</h6>
+          <p class="profile_p">0430340404</p>
+        </ion-label>
+        </ion-item>
+          <!-- <ion-item>
+              <ion-label>
+              <h6 class="profile_h6">  <ion-icon class="profile_icon" name="pin" item-start></ion-icon> Business Address</h6>
+              <p class="profile_p"> 19 carlton street granville nsw 2142
+              </p>
+            </ion-label>
+            </ion-item> -->
+            <ion-item class="manage">
+              <h4 class="heading-title">Business Email & Contact</h4>
+            </ion-item>
+          <ion-item>
+              <ion-label>
+            <h6 class="profile_h6"> <ion-icon class="profile_icon" name="mail" item-start></ion-icon> Business Email</h6>
+            <p class="profile_p"> instarentagency@gmail.com</p>
+          </ion-label>
+          </ion-item>
+          <ion-item>
+              <ion-label>
+            <h6 class="profile_h6"> <ion-icon class="profile_icon" name="call" item-start></ion-icon> Business contact</h6>
+            <p class="profile_p">0430340404</p>
+          </ion-label>
+          </ion-item>
+          <ion-item>
+            <ion-label>
+          <h6 class="profile_h6">  Property agent licence</h6>
+          <p class="profile_p">Upload</p>
+        </ion-label>
+        </ion-item>
+        <ion-item>
+          <ion-label>
+        <h6 class="profile_h6">  Upload ID card /identity proof</h6>
+        <p class="profile_p">Upload</p>
+      </ion-label>
+      </ion-item>
+        </ion-list>
+      </ion-col>
+    </ion-row>
+  <!-- <ion-button color="tertiary" expand="block" routerLink="/menu/profile/details" routerDirection="forward">
+    Details forward
+  </ion-button> -->
+</ion-content>
+ 
