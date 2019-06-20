@@ -9,14 +9,20 @@
   </ion-header>
 
 <ion-content >
+ <div>
     <ion-toolbar>
         <ion-searchbar  animated debounce="500" cancelButtonText="Custom Cancel"></ion-searchbar>
-      </ion-toolbar>
 
+      </ion-toolbar>
+      <div class="invites_v">
+          <ion-checkbox color="primary" [(ngModel)]="termsandConditons" name="termsandConditons" class="terms_conditions"></ion-checkbox> 
+          <p class="invites_txt"> Invites</p>
+      </div>
+ </div>
       <!-- List of Sliding Items -->
 <ion-list>
-    <ion-item-sliding *ngFor="let item of items;  let i = index">
-        <ion-item class="list_item" (click)="agentFullView()">
+    <ion-item-sliding class="list_item" *ngFor="let item of items;  let i = index">
+        <ion-item  (click)="agentFullView()">
             <ion-thumbnail slot="start">
               <!-- <img src="assets/imgs/profilepic.svg" class="agent_image"> -->
               <img src="assets/icon/instarent_icon.png" class="agent_image">
@@ -35,7 +41,7 @@
 
   </ion-list>
     <ion-fab vertical="bottom" horizontal="end" slot="fixed">
-        <ion-fab-button [routerLink]="['/menu/first/tabs/Agents/addAgents']" routerLinkActive="router-link-active" >
+        <ion-fab-button [routerLink]="['/menu/Agents/addAgents']" routerLinkActive="router-link-active" >
           <ion-icon name="person-add"></ion-icon>
         </ion-fab-button>
       </ion-fab>

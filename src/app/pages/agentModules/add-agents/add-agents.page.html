@@ -1,0 +1,98 @@
+<ion-header>
+    <ion-toolbar color="primary">
+        <!-- <ion-buttons slot="end">
+            <ion-back-button defaulthref="/menu/first/tabs/tab1/details"></ion-back-button>
+          </ion-buttons> -->
+          <ion-icon name="arrow-back" class="back_arrow_common"  routerLink="/menu/first/tabs/Properties"></ion-icon>
+      <ion-title>ADD AGENT</ion-title>
+    </ion-toolbar>
+  </ion-header>
+<ion-content >
+  <div class="profile_Mainview" *ngIf="!sendInviteView && newAgentView">
+      <!--  -->
+    <div class="main-picsss" id="back-ground">
+      <img src="{{profilePicture}}" onerror="this.onerror=null;this.src='assets/imgs/profilepic.svg'" alt="Profile Pic">
+      <div class="red-cam" (click)="uploadPhoto()">
+        <ion-icon name="camera"></ion-icon>
+      </div>
+    </div>
+ <div class="padding_info">
+    <ion-item>
+        <ion-label position="floating" > Name</ion-label>
+        <ion-input name="businessName" type="text" autocomplete="off" autocorrect="off" autocapitalize="off" spellcheck="false" minlength="2" maxlength="30" ngModel required></ion-input>
+    </ion-item>
+    <ion-item>
+      <ion-label position="floating" >  Email </ion-label>
+      <ion-input type="email" name="email" ngModel required></ion-input>
+    </ion-item>
+    <ion-item class="f-item pad-pt">
+      <ion-label position="floating" > Mobile Number</ion-label>
+      <ion-input type="tel" minlength="10" ngModel  maxlength="10" name="phoneNumber" required></ion-input>
+    </ion-item>
+            <ion-item>
+              <ion-label position="floating" > Address</ion-label>
+              <ion-input name="businessName" type="text" autocomplete="off" autocorrect="off" autocapitalize="off" spellcheck="false" minlength="2" maxlength="30" ngModel required></ion-input>
+          </ion-item>
+       <div>
+          <p>Property agent licence</p>
+          <p><small>Upload jpeg,png,pdf formats.</small></p>
+          <ion-button color="light" >  Upload</ion-button>
+       </div>
+       <div>
+          <p>Id card / Identity proof</p>
+          <p><small>Upload jpeg,png formats.</small></p>
+          <ion-button color="light" >  Upload</ion-button>
+       </div>
+     
+ </div>
+ <div class="agent_btn_div">
+   <ion-toolbar color="primary">
+    <ion-button class="agent-Btn" color="primary" expand="block"   (click)=AddNewAgentUpload()> Add Agent  </ion-button>
+  </ion-toolbar>
+  </div >
+  </div>
+  <ion-toolbar *ngIf="!sendInviteView && !newAgentView && !showAdgentSuccessfullAdd">
+      <ion-searchbar #myInput  animated debounce="500" [(ngModel)]="searchlist" (input)="filterItem(myInput.value)" cancelButtonText="Custom Cancel"></ion-searchbar>
+    </ion-toolbar>
+  <!-- // for invite send success ful page start here -->
+    <div *ngIf="sendInviteView && !newAgentView" class="main_check_Div">
+      <svg class="checkmark_success" xmlns="http://www.w3.org/2000/svg" viewBox="0 0 52 52"><circle class="checkmark_success__circle" cx="26" cy="26" r="25" fill="none"/><path class="checkmark_success__check" fill="none" d="M14.1 27.2l7.1 7.2 16.7-16.8"/></svg>
+      <p class="Congrats">Invited Successfull </p>
+      <!-- <p class="small_congrats">your property is now live.</p> -->
+    </div>
+    <div *ngIf="!sendInviteView && !newAgentView && showAdgentSuccessfullAdd" class="main_check_Div">
+        <svg class="checkmark_success" xmlns="http://www.w3.org/2000/svg" viewBox="0 0 52 52"><circle class="checkmark_success__circle" cx="26" cy="26" r="25" fill="none"/><path class="checkmark_success__check" fill="none" d="M14.1 27.2l7.1 7.2 16.7-16.8"/></svg>
+        <p class="Congrats">Agent added Successfull </p>
+      </div>
+<ion-list *ngIf="showAgentSearchlist && !newAgentView && searchlist && !showAdgentSuccessfullAdd">
+          <ion-item class="list_item" (click)="agentFullView()" *ngFor="let item of agentSearchListItems;  let i = index">
+              <ion-thumbnail slot="start">
+                <img src="assets/icon/instarent_icon.png" class="agent_image">
+              </ion-thumbnail>
+              <ion-label>
+                <h4>{{item.name}}</h4>
+                <p><strong>Email</strong> : {{item.email}}</p>  
+                   <p><strong>Mobile number</strong> : {{item.number}}</p>
+                <ion-button type="button"  color="primary" class="agent_add" (click)="sendInvite()" >  <ion-ripple-effect></ion-ripple-effect>Invite</ion-button>
+              </ion-label>
+            </ion-item>
+    </ion-list>
+    <ion-card class="suggestion_div" padding *ngIf="!searchlist && !newAgentView && (agentSearchListItems && agentSearchListItems.length ==0) && !showAdgentSuccessfullAdd">
+        <p class="suggestions"> Use above search
+          to find agent in
+          Instarent database
+          with agent personnel
+          mobile or email.
+        </p>
+        <p class="suggestions">    Once found send
+            invite to join
+            Instarent .</p>
+      
+            <p class="suggestions"> 
+          If agent not found</p>
+       <div class="new_one">
+          <ion-button type="button"  color="primary" class="" (click)="addNewAgent()">  <ion-ripple-effect></ion-ripple-effect>Add new agent</ion-button>
+       </div>    
+      </ion-card> 
+    <!-- // for invite send success ful page end here -->
+    </ion-content>

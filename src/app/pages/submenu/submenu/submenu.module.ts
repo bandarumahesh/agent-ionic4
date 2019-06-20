@@ -40,7 +40,7 @@ const routes: Routes = [
      { path: 'revenues', loadChildren: '../../revenues/revenues.module#RevenuesPageModule' },
      { path: 'agents', loadChildren: '../../agents/agents.module#AgentsPageModule' },
      { path: 'contacts', loadChildren: '../../contacts/contacts.module#ContactsPageModule' },
-     { path: 'add-agents', loadChildren: '../../add-agents/add-agents.module#AddAgentsPageModule' },
+    //  { path: 'add-agents', loadChildren: '../../add-agents/add-agents.module#AddAgentsPageModule' },
 
     ]
   }

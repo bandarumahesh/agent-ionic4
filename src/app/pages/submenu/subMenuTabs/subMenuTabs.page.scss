@@ -1,0 +1,32 @@
+.maintain_m{
+    width: 90px !important;
+}
+.slides_main{
+    margin: 0px !important;
+    width: 100%;
+    overflow-x: scroll;
+}
+ion-tab-bar{
+    overflow-x:scroll;
+    justify-content: left;
+}
+ion-tab-button{
+    min-width: 90px !important;
+    font-size: 9px;
+    padding: 0px;
+} 
+
+@media all and (min-width: 375px) and (max-width: 400px) {
+    ion-tab-button {
+        min-width: 94px !important;
+        font-size: 9px;
+        padding: 0px;
+    }
+    }
+@media all and (min-width: 400px) and (max-width: 1024px) {
+    ion-tab-button {
+        min-width: 104px !important;
+        font-size: 9px;
+        padding: 0px;
+    }
+}

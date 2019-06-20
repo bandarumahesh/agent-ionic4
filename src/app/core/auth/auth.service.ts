@@ -16,6 +16,7 @@ export class AuthService {
     private platform: Platform, private router: Router
   ) {
     this.platform.ready().then(_ => {
+      console.log("hello trello")
       this.checkToken();
     });
   }
@@ -24,6 +25,9 @@ export class AuthService {
       if (res) {
         console.log('hellotest');
         this.authState$.next(true);
+        this.router.navigate(['/menu/first/tabs/Dashboard']);
+
+        
       }
     });
   }

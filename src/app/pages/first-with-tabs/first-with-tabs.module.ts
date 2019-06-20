@@ -4,7 +4,8 @@ import { FormsModule } from '@angular/forms';
 import { Routes, RouterModule } from '@angular/router';
 import { IonicModule } from '@ionic/angular';
 import { FirstWithTabsPage } from './first-with-tabs.page';
-
+import { PropertiesPageModule } from '../propertyModules/properties/properties.module';
+import { ChatBoardListPageModule } from '../chatModules/chat-board-list/chat-board-list.module';
 
 
 const routes: Routes = [
@@ -22,24 +23,24 @@ const routes: Routes = [
       // },
       {
         path: 'Properties',
-        loadChildren: '../properties/properties.module#PropertiesPageModule'
-        // properties
+        loadChildren: '../propertyModules/properties/properties.module#PropertiesPageModule'
+
       },
-      {
-        path: 'Properties/addProperty',
-        loadChildren: '../add-new-property/add-new-property.module#AddNewPropertyPageModule'
-      },
+      // {
+      //   path: 'properties/addProperty',
+      //   loadChildren: '../add-new-property/add-new-property.module#AddNewPropertyPageModule'
+      // },
       {
         path: 'Agents',
         loadChildren: '../agents/agents.module#AgentsPageModule'
       },
-      {
-        path: 'Agents/addAgents',
-        loadChildren: '../add-agents/add-agents.module#AddAgentsPageModule'
-      },
+      // {
+      //   path: 'Agents/addAgents',
+      //   loadChildren: '../add-agents/add-agents.module#AddAgentsPageModule'
+      // },
       {
         path: 'Chat',
-        loadChildren: '../agents/agents.module#AgentsPageModule'
+        loadChildren: '../chatModules/chat-board-list/chat-board-list.module#ChatBoardListPageModule'
       },
       {
         path: 'Dashboard/profile',

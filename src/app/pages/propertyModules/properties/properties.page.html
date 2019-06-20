@@ -1,0 +1,114 @@
+<ion-header>
+  <ion-toolbar color="primary">
+    <ion-buttons slot="start">
+      <ion-back-button defaulthref=""></ion-back-button>
+    </ion-buttons>
+    <ion-title>PROPERTIES</ion-title>
+  </ion-toolbar>
+
+  <ion-row class="tabss-row" >
+    <!-- (click)="selectedtab(0)" -->
+    <ion-col class="tabss-col" (click)="selectedtab(0)" value="0" [ngClass]="{ 'tabss-colhover': tabs == 0 }">Vacant
+    </ion-col>
+    <ion-col class="tabss-col" (click)="selectedtab(1)" value="1" [ngClass]="{ 'tabss-colhover': tabs == 1 }">Live
+    </ion-col>
+    <!-- <ion-col class="tabss-col" (click)="selectedtab(2)" value="2" [ngClass]="{ 'tabss-colhover': tabs == 2 }">History
+    </ion-col> -->
+  </ion-row>
+</ion-header>
+<ion-content >
+
+      <ion-slides #pageSlider2 (ionSlideWillChange)="changeWillSlide($event)">
+          <ion-slide class="maintain_m" [ngClass]="{ 'slideDisplay': tabs == 1 }">
+
+         
+            <!-- *ngIf="this.globaldata.vacanttabs" -->
+<div class="slide_div"  *ngIf="tabs == 0">
+    <div>
+        <ion-toolbar>
+            <ion-searchbar class="searchbar_vld" #myInput  animated debounce="500" placeholder="Search by property" [(ngModel)]="searchlist" (input)="filterItem(myInput.value)" cancelButtonText="Custom Cancel"></ion-searchbar>
+          </ion-toolbar>
+    </div>
+    <ion-card *ngFor="let property of properties">
+      <ion-card-header class="propertyHeda" routerLink="/submenu/first">
+        19 cartlon st Granville <br><small>NSW 2142 Australia</small>
+      </ion-card-header>
+      <ion-row class="row_ffot">
+        <ion-col>
+            <ion-ripple-effect></ion-ripple-effect>
+            <ion-icon class="font-icons" name="notifications"></ion-icon>
+
+            <br>Alerts</ion-col>
+
+        <ion-col>
+            <ion-ripple-effect></ion-ripple-effect>
+          <ion-icon class="font-icons" name="briefcase"></ion-icon>
+          <!-- <ion-badge color="primary">11</ion-badge> -->
+          <br>Jobs</ion-col>
+        <ion-col>
+            <ion-ripple-effect></ion-ripple-effect>
+            <ion-icon class="font-icons" name="chatboxes"></ion-icon>
+
+            <br>Messages
+          </ion-col>
+            
+        <ion-col>
+            <ion-ripple-effect></ion-ripple-effect>
+            <ion-icon class="font-icons" name="create"></ion-icon>
+
+            <br>Notes</ion-col>
+      </ion-row>
+    </ion-card>
+    </div>
+  </ion-slide>
+  <ion-slide class="maintain_m" [ngClass]="{ 'slideDisplay': tabs == 0 }">
+      <!-- [ngClass]="{ 'slideDisplay': tabs == 0 }" -->
+<div class="slide_div" *ngIf="tabs == 1">
+    <div>
+        <ion-toolbar>
+            <ion-searchbar class="searchbar_vld" #myInput  animated debounce="500" placeholder="Search by property" [(ngModel)]="searchlist" (input)="filterItem(myInput.value)" cancelButtonText="Custom Cancel"></ion-searchbar>
+          </ion-toolbar>
+    </div>
+    <ion-card *ngFor="let property of properties">
+      <ion-card-header class="propertyHeda" routerLink="/submenu/first">
+        21 cartlon st Granville <br><small>NSW 2142 Australia</small>
+      </ion-card-header>
+      <ion-row class="row_ffot">
+        <ion-col>
+            <ion-ripple-effect></ion-ripple-effect>
+            <ion-icon class="font-icons" name="notifications"></ion-icon>
+
+            <br>Alerts</ion-col>
+
+        <ion-col>
+            <ion-ripple-effect></ion-ripple-effect>
+          <ion-icon class="font-icons" name="briefcase"></ion-icon>
+          <!-- <ion-badge color="primary">11</ion-badge> -->
+          <br>Jobs</ion-col>
+        <ion-col>
+            <ion-ripple-effect></ion-ripple-effect>
+            <ion-icon class="font-icons" name="chatboxes"></ion-icon>
+
+            <br>Messages
+          </ion-col>
+            
+        <ion-col>
+            <ion-ripple-effect></ion-ripple-effect>
+            <ion-icon class="font-icons" name="create"></ion-icon>
+
+            <br>Notes</ion-col>
+      </ion-row>
+    </ion-card>
+</div>
+    </ion-slide>
+  </ion-slides>
+  <ion-fab vertical="bottom" horizontal="end" slot="fixed">
+      <ion-fab-button [routerLink]="['/menu/properties/addProperty']" routerLinkActive="router-link-active" >
+        <ion-icon name="add"></ion-icon>
+      </ion-fab-button>
+    </ion-fab>
+</ion-content>
+
+
+
+        <!-- <img src="https://ionicframework.com/docs/demos/api/card/madison.jpg" /> -->

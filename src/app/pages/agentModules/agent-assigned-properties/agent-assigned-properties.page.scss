@@ -1,0 +1,73 @@
+.backgrey{
+    background: #f9f9f9;
+    padding: 24px;
+}
+h4 {
+    font-size: 13px;
+    margin: 12px 0px;
+}
+.aligin_dv{
+    display: inline-flex;
+    width: 100%;
+    padding: 2px 33px 2px 32px;
+}
+ion-card-subtitle{
+    font-size: 14px;
+    text-transform: capitalize;
+    color: #000 !important;
+}
+.right_alignflot{
+    font-size: 18px;
+    background: #3cdc7f;
+    color: #fff;
+    border-radius: 39%;
+    border-bottom-left-radius: 0px;
+    padding: 4px;
+    min-width: 31px !important;
+    text-align: center !important;
+    position: absolute;
+    right: 2px;
+    top: -26px;
+}
+.agent_typee{
+    position: absolute;
+    right: 6%;
+    font-weight: 600;
+    font-size: 16px;
+    top: 27px;
+}
+.propertyCards{
+    margin: 11px 10px;
+    border-left: 4px solid #3bdc7e;
+    // box-shadow: 1px 1px 1px #ececec;
+}
+.list_item{
+    display: inline-flex;
+}
+.agent_image{
+    border-radius: 50%;
+    width: 52px;
+    height: 52px;
+}
+.padd_agent{
+    padding: 12px;
+    margin: 11px 10px;
+}
+.h4_agent{
+    position: relative;
+    top: 0px;
+    left: 14px;
+    font-size: 18px !important;
+    font-weight: 400;
+}
+.first_hed{
+    width: 100%;
+    font-weight: 500;
+    font-size: 19px;
+    margin-bottom: 0px;
+}
+.jobs_v{
+    font-weight: 500;
+    font-size: 19px;
+    margin-bottom: 0px;
+}

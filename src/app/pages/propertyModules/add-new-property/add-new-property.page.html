@@ -1,0 +1,167 @@
+<ion-header>
+    <ion-toolbar color="primary">
+        <ion-buttons slot="start">
+            <ion-back-button defaulthref=""></ion-back-button>
+          </ion-buttons>
+      <ion-title>ADD PROPERTY</ion-title>
+    </ion-toolbar>
+  </ion-header>
+  <ion-content >
+<div *ngIf="wizardStep === 1" style="padding-top:16px;"> 
+    <ion-toolbar *ngIf="!isCustomLocation" >
+        <ion-searchbar #myInput  animated debounce="500"  [(ngModel)]="searchlist" (input)="filterItem(myInput.value)" cancelButtonText="Custom Cancel"></ion-searchbar>
+      </ion-toolbar>
+      <p class="not_found">
+      <ion-checkbox style="top: 4px;" color="primary" [(ngModel)]="isCustomLocation" (ionChange)="propertyNotFound($event.checked)"
+        name="isCustomProperty" class="agreed"></ion-checkbox> <span class="notfound_txt"> Couldn't find your address ?</span>
+    </p>
+<div text-start style="margin-top: 73px;margin: 22% 10%;" *ngIf="!isCustomLocation && !searchlist" >
+  <p> search with granville , nsw, carltion street</p>
+  <p>Add property by search </p>
+  <p>If your property not foound in search list go with couldn't find property </p>
+</div>
+ <div  *ngIf="isCustomLocation" style="padding-top: 12px;">
+    <ion-toolbar >
+        <ion-searchbar #myInput   animated debounce="500" placeholder="Search by Suburb" [(ngModel)]="searchlist" (input)="filterItem(myInput.value)" cancelButtonText="Custom Cancel"></ion-searchbar>
+      </ion-toolbar>
+      <ion-item>
+          <ion-label position="floating" > Address</ion-label>
+          <ion-input name="businessName" type="text" autocomplete="off" autocorrect="off" autocapitalize="off" spellcheck="false" minlength="2" maxlength="60" ngModel required></ion-input>
+      </ion-item>
+
+      <p class="not_found" style="margin-top:30px;    text-align: start;    line-height: 31px;">
+          <ion-checkbox style="top: 4px;" color="primary" [(ngModel)]="unitNumber" (ionChange)="propertyNotFound($event.checked)"
+            name="isCustomProperty" class="agreed"></ion-checkbox> <span class="notfound_txt"> Is this property a apartment , unit ,<br> granny flat or villa</span>
+        </p>
+        <ion-item *ngIf="unitNumber">
+            <ion-label position="floating" > Unit Number</ion-label>
+            <ion-input name="businessName" type="text" autocomplete="off" autocorrect="off" autocapitalize="off" spellcheck="false" minlength="2" maxlength="60" ngModel required></ion-input>
+        </ion-item>
+        <ion-button *ngIf="unitNumber" color="primary" class="unit_number" (click)="gotoProprtie()"  >Update unit number</ion-button>
+ </div>
+      <ion-list *ngIf="searchlist">
+          <ion-item class="list_item" *ngFor="let item of agentSearchListItems;  let i = index" (click)="getPropertyAddress(item.address)" >
+              <ion-ripple-effect></ion-ripple-effect>
+              <ion-label > 
+                <h4><ion-icon name="pin" class="location_icon"></ion-icon>  {{item.address}}</h4>
+              </ion-label>
+            </ion-item>
+    </ion-list>
+    <div class="setAddressavailable" *ngIf="showPropertyAddress && !isCustomLocation">
+      <p class="Congrats">   <svg class="smallcheckmark_success" xmlns="http://www.w3.org/2000/svg" viewBox="0 0 52 52"><circle class="checkmark_success__circle" cx="26" cy="26" r="25" fill="none"/><path class="checkmark_success__check" fill="none" d="M14.1 27.2l7.1 7.2 16.7-16.8"/></svg>
+         </p>
+<p class="availableaddress"> {{showPropertyAddress}} <br><span>Available</span></p>
+<div padding>
+    <!-- size="large" -->
+  <!-- <ion-button type="submit" [disabled]="!showPropertyAddress" color="primary" expand="block" >  <ion-ripple-effect></ion-ripple-effect>Set current property status</ion-button> -->
+</div>
+    </div>
+</div>
+<div *ngIf="wizardStep === 2" padding>
+  <p class="wizad_2"><ion-icon name="pin" class="location_icon"></ion-icon>   {{showPropertyAddress}}</p>
+  <ion-row *ngIf="showPropertyAddress" class="marg_top">
+    <!-- <ion-col class="tad_mr" col-12> -->
+      <ion-card class="mainCd_m" (click)="selectVacantType(2)" [ngClass]="{'selfCard': vacantType}">
+        <h4 class="type_h1 main-tr">Property currently Vacant</h4>
+        <ion-checkbox class="main_ck" color="primary" value="1" [disabled]="!vacantType" [checked]="vacantType" >
+        </ion-checkbox>
+        <!-- <p class="type_p moc-f">Property vacant, available for rent for new tenant</p> -->
+      </ion-card>
+    <!-- </ion-col> -->
+    <!-- <ion-col class="tad_tg" col-12> -->
+      <ion-card class="mainCd_m" (click)="selectVacantType(1)" [ngClass]="{'selfCard': rentalType}">
+        <h4 class="type_h1 main-tr">Property currently Rented</h4>
+        <ion-checkbox class="main_ck" color="primary" value="1" [disabled]="!rentalType" [checked]="rentalType" >
+        </ion-checkbox>
+        <!-- <p class="type_p">Property rented with existing tenant</p> -->
+      </ion-card>
+    <!-- </ion-col> -->
+  </ion-row>
+</div>
+<div *ngIf="wizardStep === 3" padding>
+
+      <h4 class="heading-title">Landlord Details</h4>
+
+  <ion-item >
+    <ion-label position="floating" >  Name</ion-label>
+    <ion-input name="businessName" type="text" autocomplete="off" autocorrect="off" autocapitalize="off" spellcheck="false" minlength="2" maxlength="30" ngModel required></ion-input>
+</ion-item>
+<ion-item>
+  <ion-label position="floating" >Email <small class="invitt">( Invite will be sent to join instarent )</small></ion-label>
+  <ion-input type="email" name="email" ngModel required></ion-input>
+  </ion-item>
+<ion-item class="f-item pad-pt">
+<ion-label position="floating" >Mobile Number</ion-label>
+<ion-input type="tel" minlength="10" ngModel  maxlength="10" name="phoneNumber" required></ion-input>
+</ion-item>
+<br>
+    <h4 class="heading-title">Tenant Details</h4>
+
+<ion-item >
+  <ion-label position="floating" >  Name</ion-label>
+  <ion-input name="businessName" type="text" autocomplete="off" autocorrect="off" autocapitalize="off" spellcheck="false" minlength="2" maxlength="30" ngModel required></ion-input>
+</ion-item>
+<ion-item>
+<ion-label position="floating" >Email <small class="invitt">( Invite will be sent to join instarent )</small></ion-label>
+<ion-input type="email" name="email" ngModel required></ion-input>
+</ion-item>
+<ion-item class="f-item pad-pt">
+<ion-label position="floating" >Mobile Number</ion-label>
+<ion-input type="tel" minlength="10" ngModel  maxlength="10" name="phoneNumber" required></ion-input>
+</ion-item>
+
+</div>
+    <div  class="lable_float" *ngIf="wizardStep === 4">
+        <div  class="main_check_Div" style="    margin-top: 26%;">
+            <svg class="checkmark_success" xmlns="http://www.w3.org/2000/svg" viewBox="0 0 52 52"><circle class="checkmark_success__circle" cx="26" cy="26" r="25" fill="none"/><path class="checkmark_success__check" fill="none" d="M14.1 27.2l7.1 7.2 16.7-16.8"/></svg>
+            <!-- <button ion-button class="submit_appli" 
+            (click)="submitApplication()">
+            CLICK HERE TO
+            <br /> GO LIVE</button> -->
+            <p class="Congrats"> Property created  <br /> Successful </p>
+            <!-- <p class="small_congrats">your property is now live.</p> -->
+          </div>
+        <div text-center>
+            <ion-button  color="primary" (click)="gotoProperties()" >GO TO PROPERTIES</ion-button>
+        </div>
+</div>
+  </ion-content>  
+  <!-- <ion-footer color="primary" *ngIf="isCustomLocation">
+      <ion-toolbar color="primary">
+          <ion-button  color="primary" (click)="gotoPropertie()" expand="block" >Submit</ion-button>
+        </ion-toolbar>
+  </ion-footer> -->
+  <ion-footer *ngIf="wizardStep !== 4">
+      <!-- && !isCustomLocation -->
+      <ion-toolbar>
+          <!-- showPropertyAddress -->
+          <ion-buttons slot="primary" *ngIf="wizardStep === 1 "  >
+              <ion-button (click)="gonext()" class="footer_subbtns" >
+                Next
+                <ion-icon name="arrow-forward" class="hellos"></ion-icon>
+              </ion-button>
+            </ion-buttons>
+            <ion-buttons slot="primary" *ngIf="wizardStep === 2" class="footer_butns">
+                <ion-button (click)="gotoPreviousStep()" class="footer_subbtns">
+                    <ion-icon name="arrow-back"  class="hellos"></ion-icon> 
+                    Back
+                  </ion-button>
+                <ion-button (click)="gonext()" class="footer_subbtns">
+                  Next
+                  <!-- <ion-icon slot="icon-only" name="star"></ion-icon> -->
+                  <ion-icon name="arrow-forward" class="hellos"></ion-icon>
+                </ion-button>
+              </ion-buttons>
+              <ion-buttons slot="primary" *ngIf="wizardStep === 3" class="footer_butns">
+                <ion-button (click)="gotoPreviousStep()" class="footer_subbtns">
+                    <ion-icon name="arrow-back"  class="hellos"></ion-icon> 
+                    Back
+                  </ion-button>
+                <ion-button (click)="gonext()" class="footer_subbtns">
+                  Finish
+                  <!-- <ion-icon slot="icon-only" name="star"></ion-icon> -->
+                  <ion-icon name="arrow-forward" class="hellos"></ion-icon>
+                </ion-button>
+              </ion-buttons>
+      </ion-toolbar>
+    </ion-footer>

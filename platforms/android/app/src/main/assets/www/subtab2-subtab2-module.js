@@ -62,7 +62,7 @@ var SubTab2PageModule = /** @class */ (function () {
 /*! no static exports found */
 /***/ (function(module, exports) {
 
-module.exports = "<ion-header>\n  <ion-toolbar color=\"primary\">\n  \t<!-- <ion-buttons slot=\"start\">\n      <ion-menu-button></ion-menu-button>\n    </ion-buttons> -->\n    <ion-icon name=\"arrow-back\" class=\"back_arrow_common\"  routerLink=\"/menu/first/tabs/Properties\"></ion-icon>\n\n    <ion-title>tab2</ion-title>\n  </ion-toolbar>\n</ion-header>\n\n<ion-content padding>\nMy Tab 2\n  <ion-button color=\"tertiary\" expand=\"block\" routerLink=\"/menu/first/tabs/tab2/add-user\" routerDirection=\"forward\">\n    Add User Button\n  </ion-button>\n</ion-content>\n"
+module.exports = "<ion-header>\n  <ion-toolbar color=\"primary\">\n  \t<!-- <ion-buttons slot=\"start\">\n      <ion-menu-button></ion-menu-button>\n    </ion-buttons> -->\n    <ion-icon slot=\"start\" name=\"arrow-back\" class=\"back_arrow_common\"  routerLink=\"/menu/first/tabs/Properties\"></ion-icon>\n\n    <ion-title style=\"padding-left: 27%;\">ACCOUNTS</ion-title>\n  </ion-toolbar>\n</ion-header>\n\n<ion-content padding>\nMy Tab 2\n  <ion-button color=\"tertiary\" expand=\"block\" routerLink=\"/menu/first/tabs/tab2/add-user\" routerDirection=\"forward\">\n    Add User Button\n  </ion-button>\n</ion-content>\n"
 
 /***/ }),
 

@@ -1,0 +1,66 @@
+.profile_Mainview{
+    height: 34%;
+    background: linear-gradient(to bottom, #3bdc7e, #b0e66d);
+    width: 100%;
+}
+.list_item{
+    position: relative;
+}
+.status_list{
+    // position: absolute;
+    // right: 20px;
+    // top: 6px;
+    // background: #aebdc7;
+    // padding: 7px 18px;
+    // border-radius: 14px;
+    // color: #fff;
+    // font-size: 11px;
+
+    position: absolute;
+    right: 20px;
+    top: 6px;
+    background: #ffffff;
+    padding: 7px 18px;
+    border-radius: 14px;
+    color: #272626;
+    font-size: 11px;
+    box-shadow: 1px 1px 1px 1px #efe9e9;
+}
+.agent_add{
+    position: absolute;
+    right: 4%;
+    top: 10px;
+    min-width: 70px;
+}
+.agent_image{
+    border-radius: 50%;
+    width: 52px;
+    height: 52px;
+}
+.padding_info{
+    padding: 8% 6%;
+}
+    ion-item {
+        padding-bottom: 12px;
+}
+.suggestions{
+    padding: 0% 16% 0 16%;
+    line-height: 33px;
+    font-size: 17px;
+    margin: 4px 0px;
+}
+.suggestion_div{
+    box-shadow: 0px 1px 3px 1px #f5f0f0;
+}
+.new_one{
+    text-align: center;
+    margin-bottom: 15px;
+}
+.agent_btn_div{
+    background: #3bdc7e !important;
+    text-align: center;
+}
+.agent-Btn{
+    margin: 0px;
+    height: 54px;
+}

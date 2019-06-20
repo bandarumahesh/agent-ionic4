@@ -1,4 +1,4 @@
 <ion-app>
-  <ion-router-outlet></ion-router-outlet>
-  <!-- <p>hrllo </p> -->
+    <ion-spinner class="spinner_app" name="crescent" *ngIf="loader"></ion-spinner>
+  <ion-router-outlet [hidden]="loader"></ion-router-outlet>
 </ion-app>
