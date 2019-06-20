@@ -62,7 +62,7 @@ var AddAgentsPageModule = /** @class */ (function () {
 /*! no static exports found */
 /***/ (function(module, exports) {
 
-module.exports = "<ion-header>\n    <ion-toolbar color=\"primary\">\n        <ion-buttons slot=\"start\">\n            <ion-back-button defaulthref=\"\"></ion-back-button>\n          </ion-buttons>\n      <ion-title>ADD NEW AGENT</ion-title>\n    </ion-toolbar>\n  </ion-header>\n\n<ion-content padding>\nhello\n</ion-content>\n "
+module.exports = "<ion-header>\n    <ion-toolbar color=\"primary\">\n        <ion-buttons slot=\"start\">\n            <ion-back-button defaulthref=\"\"></ion-back-button>\n          </ion-buttons>\n      <ion-title>ADD NEW AGENT</ion-title>\n    </ion-toolbar>\n  </ion-header>\n\n<ion-content >\n  <div class=\"profile_Mainview\">\n    <div class=\"main-picsss\" id=\"back-ground\">\n          <img src=\"{{profilePicture}}\" onerror=\"this.onerror=null;this.src='assets/imgs/profilepic.svg'\" alt=\"Profile Pic\">\n          <div class=\"red-cam\" (click)=\"uploadPhoto()\">\n            <ion-icon name=\"camera\"></ion-icon>\n          </div>\n      </div>\n      <!-- <button class=\"editbtn\" ion-button [routerLink]=\"['/membership/12']\" routerDirection=\"forward\"  (click)=\"editUserProfile()\">\n          <img src=\"assets/icon/pencil.svg\" width=\"60\" />\n        </button> -->\n</div>\n</ion-content>\n "
 
 /***/ }),
 
@@ -73,7 +73,7 @@ module.exports = "<ion-header>\n    <ion-toolbar color=\"primary\">\n        <io
 /*! no static exports found */
 /***/ (function(module, exports) {
 
-module.exports = "\n/*# sourceMappingURL=data:application/json;base64,eyJ2ZXJzaW9uIjozLCJzb3VyY2VzIjpbXSwibmFtZXMiOltdLCJtYXBwaW5ncyI6IiIsImZpbGUiOiJzcmMvYXBwL3BhZ2VzL2FkZC1hZ2VudHMvYWRkLWFnZW50cy5wYWdlLnNjc3MifQ== */"
+module.exports = ".profile_Mainview {\n  height: 34%;\n  background: linear-gradient(to bottom, #3bdc7e, #b0e66d);\n  width: 100%; }\n\n/*# sourceMappingURL=data:application/json;base64,eyJ2ZXJzaW9uIjozLCJzb3VyY2VzIjpbIi9JbnN0YXJlbnQvSW5zdGFyZW50IFJlcG9zL2FnZW50X3Rlc3RfcHJvamVjdC9pb25pYzQtdGVtcGxhdGUvc3JjL2FwcC9wYWdlcy9hZGQtYWdlbnRzL2FkZC1hZ2VudHMucGFnZS5zY3NzIl0sIm5hbWVzIjpbXSwibWFwcGluZ3MiOiJBQUFBO0VBQ0ksV0FBVztFQUNYLHdEQUF3RDtFQUN4RCxXQUFXLEVBQUEiLCJmaWxlIjoic3JjL2FwcC9wYWdlcy9hZGQtYWdlbnRzL2FkZC1hZ2VudHMucGFnZS5zY3NzIiwic291cmNlc0NvbnRlbnQiOlsiLnByb2ZpbGVfTWFpbnZpZXd7XG4gICAgaGVpZ2h0OiAzNCU7XG4gICAgYmFja2dyb3VuZDogbGluZWFyLWdyYWRpZW50KHRvIGJvdHRvbSwgIzNiZGM3ZSwgI2IwZTY2ZCk7XG4gICAgd2lkdGg6IDEwMCU7XG59Il19 */"
 
 /***/ }),
 

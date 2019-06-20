@@ -1,0 +1,37 @@
+<ion-header>
+  <ion-toolbar color="primary">
+      <ion-buttons slot="start">
+          <ion-back-button defaulthref=""></ion-back-button>
+        </ion-buttons>
+    <ion-title>PROPERTIES</ion-title>
+  </ion-toolbar>
+</ion-header>
+
+<ion-content >
+  <ion-card class="padd_agent">
+      <div class="list_item" >
+          <ion-thumbnail slot="start">
+            <!-- <img src="assets/imgs/profilepic.svg" class="agent_image"> -->
+            <img src="assets/icon/instarent_icon.png" class="agent_image">
+          </ion-thumbnail>
+          <ion-label>
+            <h4 class="h4_agent">Instarent Agent </h4>
+            <p class="agent_typee">Agent</p>
+          </ion-label>
+        </div>
+  </ion-card>
+    <div class="aligin_dv">
+        <p class="first_hed">Properties</p>
+        <p  text-end class="jobs_v">Jobs</p>
+      </div>
+<ion-card class="propertyCards"  *ngFor="let property of agentProperties; let i =index;" > 
+  <ion-card-header class="backgrey"  routerLinkActive="router-link-active" >
+      <ion-ripple-effect></ion-ripple-effect>
+      <ion-card-subtitle >
+        <h4 [routerLink]="['/submenu/first/subtabs/tab1']" routerLinkActive="router-link-active">19 carlton street ,granville, NSW  </h4>        
+        <p text-end class="right_alignflot" [routerLink]="['/menu/agent-full-view/agentProperties/agentJobs']"> {{2 + i}}</p>
+      </ion-card-subtitle>
+      <!-- <ion-card-title>Card Title</ion-card-title> -->
+    </ion-card-header>
+</ion-card> 
+</ion-content>

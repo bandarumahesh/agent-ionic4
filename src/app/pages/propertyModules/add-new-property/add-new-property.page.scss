@@ -1,0 +1,132 @@
+.smallcheckmark_success {
+    width: 62px;
+    height: 62px;
+    border-radius: 50%;
+    display: block;
+    stroke-width: 3px;
+    stroke: #fff;
+    stroke-miterlimit: 10;
+    box-shadow: inset 0px 0px 0px #7ac142;
+    -webkit-animation: fill .1s ease-in-out .1s forwards, scale .2s ease-in-out .3s both;
+    animation: fill .1s ease-in-out .1s forwards, scale .2s ease-in-out .3s both;
+    background: #7ac142;
+    margin: auto;
+    position: relative;
+    top: 25%;
+}
+.availableaddress{
+    text-align: center;
+    line-height: 42px;
+    font-weight: 400;
+    font-size: 25px;
+    color: #7ac141;
+}
+.setAddressavailable{
+    margin-top: 17%;
+}
+.location_icon{
+    font-size: 20px;
+    position: relative;
+    top: 5px;
+    color: #3bdc7e;
+}
+.footer_butns{
+    width: 100%;
+    justify-content: space-between;
+}
+.footer_subbtns{
+    font-size: 18px !important;
+}
+.wizad_2{
+    color: #3c3e3c;
+    font-size: 19px;
+    padding-left: 20px;
+}
+
+
+.tad_tg {
+    padding: 0px;
+    padding-left: 4px;
+}
+.mainCd_m {
+    margin: 10px;
+    padding: 10px;
+    width: 100%;
+    border-radius: 6px;
+    position: relative;
+    height: 142px;
+}
+.mainCd_m .main_ck {
+    position: absolute;
+    left: 32px;
+    top: 55px;
+}
+.type_h1 {
+    text-align: center;
+    font-size: 15px;
+    color: grey;
+}
+.main-tr {
+    font-weight: 400;
+    color: #5a5656;
+    font-size: 16px;
+    margin-top: 44px;
+    line-height: 27px;
+}
+.type_p {
+    padding: 20px 8px;
+    text-align: center;
+    line-height: 26px;
+}
+.moc-f {
+    padding: 18px 6px;
+    line-height: 23px;
+}
+.marg_top{
+    margin-top: 50px;
+}
+.tad_mr {
+    padding-right: 6px;
+    padding: 0px;
+}
+.selfCard {
+    background-color: #fbfbfb;
+    border: 1.5px solid #5ce68c;
+    box-shadow: 1px 0px 0px #e2dddd;
+    border-radius: 6px;
+}
+.invitt{
+    position: relative;
+    top: -1px;
+    left: 4px;
+}
+.not_found{
+    color: #424141;
+    font-size: 15px;
+    text-align: right;
+    font-weight: 500;
+    margin: 0px 22px;
+}
+.notfound_txt{
+    position: relative;
+    top: -3px
+}
+.heading-title{
+    color: #6dd45e;
+    position: relative;
+    top: 15px;
+    left: 13px;
+    z-index: 999999;
+}
+.unit_number{
+    margin-top: 24px;
+    margin-left: 14px;
+}
+@media all and (min-width: 300px) and (max-width: 320px) {
+    .type_p {
+        padding: 11px 11px;
+        text-align: center;
+        line-height: 26px;
+        font-size: 12px;
+    }
+}

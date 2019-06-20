@@ -17,7 +17,7 @@ import { MyHttpInterceptor } from './core/auth/http.interceptor';
   imports: [BrowserModule,
     IonicModule.forRoot(),
     AppRoutingModule,
-    CoreModule,
+    CoreModule, 
     HttpClientModule
   ],
   providers: [

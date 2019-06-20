@@ -1,5 +1,10 @@
+ion-title{
+    text-align: center;
+}
+
+
 .list_item{
-    position: relative;
+ margin-bottom: 12px;
 }
 .status_list{
     // position: absolute;
@@ -27,6 +32,22 @@
     height: 52px;
 }
 
-    ion-item {
-        padding-bottom: 12px;
+//     ion-item {
+//         padding-bottom: 12px;
+// } 
+.invites_v{
+    text-align: end;
+    margin-right: 32px;
+    margin-bottom: 2px;
+    line-height: 21px;
+    margin-top: 12px;
+    display: inline-flex;
+    width: 100%;
+    margin-left: 74%;
+}
+.invites_txt{
+    position: relative;
+    top: 0px;
+    left: 4px;
+    margin-top: 0px;
 }

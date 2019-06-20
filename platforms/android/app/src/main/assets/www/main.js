@@ -841,10 +841,6 @@ var map = {
 		"./src/app/profile/profile.module.ts",
 		"profile-profile-module"
 	],
-	"../../add-agents/add-agents.module": [
-		"./src/app/pages/add-agents/add-agents.module.ts",
-		"add-agents-add-agents-module"
-	],
 	"../../agency-dashboard/agency-dashboard.module": [
 		"./src/app/pages/agency-dashboard/agency-dashboard.module.ts",
 		"agency-dashboard-agency-dashboard-module"
@@ -869,17 +865,25 @@ var map = {
 		"./src/app/pages/second/second.module.ts",
 		"second-second-module"
 	],
-	"../add-agents/add-agents.module": [
-		"./src/app/pages/add-agents/add-agents.module.ts",
-		"add-agents-add-agents-module"
-	],
-	"../add-new-property/add-new-property.module": [
-		"./src/app/pages/add-new-property/add-new-property.module.ts",
-		"add-new-property-add-new-property-module"
-	],
 	"../agency-dashboard/agency-dashboard.module": [
 		"./src/app/pages/agency-dashboard/agency-dashboard.module.ts",
 		"agency-dashboard-agency-dashboard-module"
+	],
+	"../agentModules/add-agents/add-agents.module": [
+		"./src/app/pages/agentModules/add-agents/add-agents.module.ts",
+		"agentModules-add-agents-add-agents-module"
+	],
+	"../agentModules/agent-assigned-properties/agent-assigned-properties.module": [
+		"./src/app/pages/agentModules/agent-assigned-properties/agent-assigned-properties.module.ts",
+		"agentModules-agent-assigned-properties-agent-assigned-properties-module"
+	],
+	"../agentModules/agent-full-view/agent-full-view.module": [
+		"./src/app/pages/agentModules/agent-full-view/agent-full-view.module.ts",
+		"agentModules-agent-full-view-agent-full-view-module"
+	],
+	"../agentModules/agent-jobs/agent-jobs.module": [
+		"./src/app/pages/agentModules/agent-jobs/agent-jobs.module.ts",
+		"agentModules-agent-jobs-agent-jobs-module"
 	],
 	"../agents/agents.module": [
 		"./src/app/pages/agents/agents.module.ts",
@@ -893,9 +897,13 @@ var map = {
 		"./src/app/pages/first-with-tabs/first-with-tabs.module.ts",
 		"first-with-tabs-first-with-tabs-module"
 	],
-	"../properties/properties.module": [
-		"./src/app/pages/properties/properties.module.ts",
-		"properties-properties-module"
+	"../propertyModules/add-new-property/add-new-property.module": [
+		"./src/app/pages/propertyModules/add-new-property/add-new-property.module.ts",
+		"propertyModules-add-new-property-add-new-property-module"
+	],
+	"../propertyModules/properties/properties.module": [
+		"./src/app/pages/propertyModules/properties/properties.module.ts",
+		"propertyModules-properties-properties-module"
 	],
 	"../settings/settings.module": [
 		"./src/app/pages/settings/settings.module.ts",
@@ -1035,7 +1043,7 @@ var AppRoutingModule = /** @class */ (function () {
 /*! no static exports found */
 /***/ (function(module, exports) {
 
-module.exports = "<ion-app>\n  <ion-router-outlet></ion-router-outlet>\n  <!-- <p>hrllo </p> -->\n</ion-app>\n"
+module.exports = "<ion-app>\n    <ion-spinner class=\"spinner_app\" name=\"crescent\" *ngIf=\"loader\"></ion-spinner>\n  <ion-router-outlet [hidden]=\"loader\"></ion-router-outlet>\n</ion-app>\n"
 
 /***/ }),
 
@@ -1049,13 +1057,13 @@ module.exports = "<ion-app>\n  <ion-router-outlet></ion-router-outlet>\n  <!-- <
 "use strict";
 __webpack_require__.r(__webpack_exports__);
 /* harmony export (binding) */ __webpack_require__.d(__webpack_exports__, "AppComponent", function() { return AppComponent; });
-/* harmony import */ var _angular_core__WEBPACK_IMPORTED_MODULE_0__ = __webpack_require__(/*! @angular/core */ "./node_modules/@angular/core/fesm5/core.js");
-/* harmony import */ var _ionic_angular__WEBPACK_IMPORTED_MODULE_1__ = __webpack_require__(/*! @ionic/angular */ "./node_modules/@ionic/angular/dist/fesm5.js");
-/* harmony import */ var _ionic_native_splash_screen_ngx__WEBPACK_IMPORTED_MODULE_2__ = __webpack_require__(/*! @ionic-native/splash-screen/ngx */ "./node_modules/@ionic-native/splash-screen/ngx/index.js");
-/* harmony import */ var _ionic_native_status_bar_ngx__WEBPACK_IMPORTED_MODULE_3__ = __webpack_require__(/*! @ionic-native/status-bar/ngx */ "./node_modules/@ionic-native/status-bar/ngx/index.js");
-/* harmony import */ var _app_core_auth_auth_service__WEBPACK_IMPORTED_MODULE_4__ = __webpack_require__(/*! ../app/core/auth/auth.service */ "./src/app/core/auth/auth.service.ts");
-/* harmony import */ var _angular_router__WEBPACK_IMPORTED_MODULE_5__ = __webpack_require__(/*! @angular/router */ "./node_modules/@angular/router/fesm5/router.js");
-/* harmony import */ var _ionic_storage__WEBPACK_IMPORTED_MODULE_6__ = __webpack_require__(/*! @ionic/storage */ "./node_modules/@ionic/storage/fesm5/ionic-storage.js");
+/* harmony import */ var _angular_router__WEBPACK_IMPORTED_MODULE_0__ = __webpack_require__(/*! @angular/router */ "./node_modules/@angular/router/fesm5/router.js");
+/* harmony import */ var _app_core_auth_auth_service__WEBPACK_IMPORTED_MODULE_1__ = __webpack_require__(/*! ../app/core/auth/auth.service */ "./src/app/core/auth/auth.service.ts");
+/* harmony import */ var _angular_core__WEBPACK_IMPORTED_MODULE_2__ = __webpack_require__(/*! @angular/core */ "./node_modules/@angular/core/fesm5/core.js");
+/* harmony import */ var _ionic_angular__WEBPACK_IMPORTED_MODULE_3__ = __webpack_require__(/*! @ionic/angular */ "./node_modules/@ionic/angular/dist/fesm5.js");
+/* harmony import */ var _ionic_native_splash_screen_ngx__WEBPACK_IMPORTED_MODULE_4__ = __webpack_require__(/*! @ionic-native/splash-screen/ngx */ "./node_modules/@ionic-native/splash-screen/ngx/index.js");
+/* harmony import */ var _ionic_storage__WEBPACK_IMPORTED_MODULE_5__ = __webpack_require__(/*! @ionic/storage */ "./node_modules/@ionic/storage/fesm5/ionic-storage.js");
+/* harmony import */ var _ionic_native_status_bar_ngx__WEBPACK_IMPORTED_MODULE_6__ = __webpack_require__(/*! @ionic-native/status-bar/ngx */ "./node_modules/@ionic-native/status-bar/ngx/index.js");
 var __decorate = (undefined && undefined.__decorate) || function (decorators, target, key, desc) {
     var c = arguments.length, r = c < 3 ? target : desc === null ? desc = Object.getOwnPropertyDescriptor(target, key) : desc, d;
     if (typeof Reflect === "object" && typeof Reflect.decorate === "function") r = Reflect.decorate(decorators, target, key, desc);
@@ -1088,30 +1096,36 @@ var AppComponent = /** @class */ (function () {
         this.platform.ready().then(function () {
             _this.statusBar.styleLightContent();
             _this.splashScreen.hide();
-            _this.authService.authState$.subscribe(function (state) {
-                if (state === true) {
+            _this.loader = true;
+            setTimeout(function () {
+                _this.loader = false;
+                _this.authService.authState$.subscribe(function (state) {
+                    console.log('hello', state);
+                    // if ( state === true) {
                     // this.router.navigate(["membership"]);
                     // this.router.navigate(["/menu/agency-dashboard"]);
-                    _this.router.navigate(['/menu/first/tabs/Dashboard']);
-                }
-                else {
-                    console.log('hello222');
-                    _this.router.navigate(['home']);
-                }
-            });
+                    // this.router.navigate(['/menu/first/tabs/Dashboard']);
+                    // } else 
+                    if (state === false) {
+                        console.log('hello222');
+                        _this.router.navigate(['home']);
+                    }
+                    // this.loader=false;
+                });
+            }, 2000);
         });
     };
     AppComponent = __decorate([
-        Object(_angular_core__WEBPACK_IMPORTED_MODULE_0__["Component"])({
+        Object(_angular_core__WEBPACK_IMPORTED_MODULE_2__["Component"])({
             selector: 'app-root',
             template: __webpack_require__(/*! ./app.component.html */ "./src/app/app.component.html")
         }),
-        __metadata("design:paramtypes", [_app_core_auth_auth_service__WEBPACK_IMPORTED_MODULE_4__["AuthService"],
-            _angular_router__WEBPACK_IMPORTED_MODULE_5__["Router"],
-            _ionic_angular__WEBPACK_IMPORTED_MODULE_1__["Platform"],
-            _ionic_native_splash_screen_ngx__WEBPACK_IMPORTED_MODULE_2__["SplashScreen"],
-            _ionic_native_status_bar_ngx__WEBPACK_IMPORTED_MODULE_3__["StatusBar"],
-            _ionic_storage__WEBPACK_IMPORTED_MODULE_6__["Storage"]])
+        __metadata("design:paramtypes", [_app_core_auth_auth_service__WEBPACK_IMPORTED_MODULE_1__["AuthService"],
+            _angular_router__WEBPACK_IMPORTED_MODULE_0__["Router"],
+            _ionic_angular__WEBPACK_IMPORTED_MODULE_3__["Platform"],
+            _ionic_native_splash_screen_ngx__WEBPACK_IMPORTED_MODULE_4__["SplashScreen"],
+            _ionic_native_status_bar_ngx__WEBPACK_IMPORTED_MODULE_6__["StatusBar"],
+            _ionic_storage__WEBPACK_IMPORTED_MODULE_5__["Storage"]])
     ], AppComponent);
     return AppComponent;
 }());
@@ -1245,7 +1259,7 @@ var AuthGuard = /** @class */ (function () {
         this.authService = authService;
         this.router = router;
     }
-    AuthGuard.prototype.canActivate = function () {
+    AuthGuard.prototype.canActivate = function (next, state) {
         return this.authService.isAuthenticated();
     };
     AuthGuard = __decorate([
@@ -1258,6 +1272,32 @@ var AuthGuard = /** @class */ (function () {
     return AuthGuard;
 }());
 
+// @Injectable({
+//   providedIn: 'root'
+// })
+// export class AuthGuard2 implements CanActivateChild {
+//   constructor(private authService: AuthService, private router: Router ){}
+//   canActivateChild(
+//     next: ActivatedRouteSnapshot,
+//     state: RouterStateSnapshot): Observable<boolean> | Promise<boolean> | boolean {
+//     if(this.authService.isAuthenticated()){
+//       return true;
+//     }
+//     else{
+//       return new Promise((resolve) => {
+//         this.authService.checkToken().then((tokenExists)=>{
+//           if(tokenExists){
+//             resolve(true);
+//           }
+//           else{
+//             this.router.navigateByUrl('/login');
+//             resolve(false);
+//           }
+//         })
+//       })
+//     }
+//   }
+// }
 
 
 /***/ }),
@@ -1303,6 +1343,7 @@ var AuthService = /** @class */ (function () {
         this.router = router;
         this.authState$ = new rxjs__WEBPACK_IMPORTED_MODULE_3__["BehaviorSubject"](null);
         this.platform.ready().then(function (_) {
+            console.log("hello trello");
             _this.checkToken();
         });
     }
@@ -1312,6 +1353,7 @@ var AuthService = /** @class */ (function () {
             if (res) {
                 console.log('hellotest');
                 _this.authState$.next(true);
+                _this.router.navigate(['/menu/first/tabs/Dashboard']);
             }
         });
     };

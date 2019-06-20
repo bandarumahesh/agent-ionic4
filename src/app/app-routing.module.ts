@@ -4,6 +4,7 @@ import { AuthGuard } from './core/auth/auth.guard';
 import { DataResolverService } from './resolver/data-resolver.service';
 // import { AuthGuard } from '@core/auth/auth.guard';
 
+
 const routes: Routes = [
   { path: '', redirectTo: 'home', pathMatch: 'full' },
   // { path: '', redirectTo: 'login', pathMatch: 'full' },
@@ -23,6 +24,11 @@ const routes: Routes = [
   { path: 'membership',
   canActivate: [AuthGuard],
   loadChildren: './pages/membership-for-agency/membership-for-agency.module#MembershipForAgencyPageModule' },
+  { path: 'chatBoardList', loadChildren: '/pages/chatModules/chat-board-list/chat-board-list.module#ChatBoardListPageModule' },
+  { path: 'chatMessagesRoom', loadChildren: './pages/chatModules/chat-messages-room/chat-messages-room.module#ChatMessagesRoomPageModule' },
+  // { path: 'agent-assigned-properties',
+  // loadChildren: './agent-assigned-properties/agent-assigned-properties.module#AgentAssignedPropertiesPageModule' },
+  // { path: 'agent-jobs', loadChildren: './agent-jobs/agent-jobs.module#AgentJobsPageModule' },
   // { path: 'agent-full-view', loadChildren: './pages/agent-full-view/agent-full-view.module#AgentFullViewPageModule' },
   // { path: 'membership/:id', canActivate: [AuthGuard],
   // loadChildren: './pages/membership-for-agency/membership-for-agency.module#MembershipForAgencyPageModule' },

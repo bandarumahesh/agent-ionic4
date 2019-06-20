@@ -1,0 +1,99 @@
+
+
+.profile_Mainview{
+    height: 34%;
+    background: linear-gradient(to bottom, #3bdc7e, #b0e66d);
+    width: 100%;
+}
+.backgrey{
+    background: #f9f9f9;
+}
+ion-card-subtitle{
+    font-size: 14px;
+    text-transform: capitalize;
+    color: #000 !important;
+}
+.right_alignflot{
+    // float: right;
+    // font-size: 18px;
+    // margin-right: 20px;
+
+        /* float: right; */
+        font-size: 18px;
+        /* margin-right: 20px; */
+        // background: #d2d0d0;
+        background: #3cdc7f;
+        color: #fff;
+        border-radius: 39%;
+        border-bottom-left-radius: 0px;
+        padding: 4px;
+        min-width: 31px !important;
+        text-align: center !important;
+        position: absolute;
+        right: 6px;
+        top: -26px;
+}
+.action_btins{
+    position: absolute;
+    right: 8px;
+    top: 16px;
+    padding: 0px;
+    width: 17%;
+    height: 34px;
+}
+.editbtn {
+    position: absolute;
+    right: 20px;
+    top: 28.6%;
+    z-index: 10;
+    width: 52px;
+    height: 52px;
+    font-size: 2rem;
+    box-shadow: transparent 1px 1px 1px 7px;
+    border-radius: 50%;
+    background: linear-gradient(#20c659, #a8e063);
+    padding: 9px 16px 14px 15px;
+}
+.profile_p{
+    font-size: 15px;
+    padding-left: 29px;
+    margin-top: 9px;
+}
+.profile_h6{
+    font-size: 17px;
+}
+.profile_icon{
+    font-size: 21px;
+    position: relative;
+    top: 5px;
+    margin-right: 5px;
+    color: #80e275;
+}
+.heading-title{
+    color: #6dd45e;
+}
+#globalMenu{
+    display: none !important;
+}
+.invite_div{
+    margin-top: 28px;
+    padding: 10px;
+    text-align: center;
+}
+.resend_invite{
+    margin-right: 15px;
+}
+@media(min-width:760px) and (max-width:2900px) {
+.action_btins{
+    position: absolute;
+    right: 30px;
+    top: 12px;
+    padding: 0px;
+    width: 13%;
+    height: 38px;
+}
+.editbtn[_ngcontent-c6] {
+    top: 30.6%;
+ 
+}
+}

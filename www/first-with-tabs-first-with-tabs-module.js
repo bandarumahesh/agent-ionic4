@@ -43,21 +43,20 @@ var routes = [
             // },
             {
                 path: 'Properties',
-                loadChildren: '../properties/properties.module#PropertiesPageModule'
-                // properties
+                loadChildren: '../propertyModules/properties/properties.module#PropertiesPageModule'
             },
-            {
-                path: 'Properties/addProperty',
-                loadChildren: '../add-new-property/add-new-property.module#AddNewPropertyPageModule'
-            },
+            // {
+            //   path: 'properties/addProperty',
+            //   loadChildren: '../add-new-property/add-new-property.module#AddNewPropertyPageModule'
+            // },
             {
                 path: 'Agents',
                 loadChildren: '../agents/agents.module#AgentsPageModule'
             },
-            {
-                path: 'Agents/addAgents',
-                loadChildren: '../add-agents/add-agents.module#AddAgentsPageModule'
-            },
+            // {
+            //   path: 'Agents/addAgents',
+            //   loadChildren: '../add-agents/add-agents.module#AddAgentsPageModule'
+            // },
             {
                 path: 'Chat',
                 loadChildren: '../agents/agents.module#AgentsPageModule'
@@ -110,7 +109,7 @@ var FirstWithTabsPageModule = /** @class */ (function () {
 /*! no static exports found */
 /***/ (function(module, exports) {
 
-module.exports = "<!-- <ion-header id=\"globalMenu\">\n    <ion-toolbar color=\"primary\">\n      <ion-title class=\"menu_tile\"></ion-title>\n      <div  class=\"side_menuStl\">\n   <ion-label>\n             <img id=\"menu_forGlobal\"  src=\"https://ionicframework.com/docs/demos/api/card/madison.jpg\" style=\"width:40px;border-radius: 50%;height:40px;\"/>\n            <span class=\"name_menu\">AJ Chand</span>\n          <ion-select class=\"menu_select\" style=\"height: 0px;\"  [(ngModel)]=\"selectedMenu\" (ionChange)=\"selectMenuOptions($event.target.value)\" multiple=\"false\" interface=\"popover\">\n            <ion-select-option *ngFor=\"let menu of menuOptions\" [value]=\"menu\" >{{menu}}</ion-select-option>\n          </ion-select>\n        </ion-label>\n        </div>\n    </ion-toolbar>\n  </ion-header> -->\n\n<ion-tabs>\n \n  <ion-tab-bar slot=\"bottom\">\n \n    <ion-tab-button tab=\"Dashboard\">\n      <ion-icon name=\"logo-windows\"></ion-icon>\n      <ion-label>Dashboard</ion-label>\n    </ion-tab-button>\n    <ion-tab-button tab=\"Properties\">\n      <ion-icon name=\"home\"></ion-icon>\n      <ion-label>Properties</ion-label>\n    </ion-tab-button>\n    <ion-tab-button tab=\"Agents\">\n      <ion-icon name=\"people\"></ion-icon>\n      <ion-label>Agents</ion-label>\n    </ion-tab-button>\n    <ion-tab-button tab=\"Chat\">\n      <ion-icon name=\"chatboxes\"></ion-icon>\n      <ion-label>Chat</ion-label>\n    </ion-tab-button>\n    <!-- <ion-tab-button tab=\"Chat\">\n        <ion-icon name=\"star\"></ion-icon>\n        <ion-label>MORE</ion-label>\n      </ion-tab-button> -->\n  </ion-tab-bar>\n \n</ion-tabs>\n"
+module.exports = "<!-- <ion-header id=\"globalMenu\">\n    <ion-toolbar color=\"primary\">\n      <ion-title class=\"menu_tile\"></ion-title>\n      <div  class=\"side_menuStl\">\n   <ion-label>\n             <img id=\"menu_forGlobal\"  src=\"https://ionicframework.com/docs/demos/api/card/madison.jpg\" style=\"width:40px;border-radius: 50%;height:40px;\"/>\n            <span class=\"name_menu\">AJ Chand</span>\n          <ion-select class=\"menu_select\" style=\"height: 0px;\"  [(ngModel)]=\"selectedMenu\" (ionChange)=\"selectMenuOptions($event.target.value)\" multiple=\"false\" interface=\"popover\">\n            <ion-select-option *ngFor=\"let menu of menuOptions\" [value]=\"menu\" >{{menu}}</ion-select-option>\n          </ion-select>\n        </ion-label>\n        </div>\n    </ion-toolbar>\n  </ion-header> -->\n\n<ion-tabs>\n \n  <ion-tab-bar slot=\"bottom\">\n \n    <ion-tab-button tab=\"Dashboard\">\n        <ion-icon name=\"podium\"></ion-icon>\n      <ion-label>Dashboard</ion-label>\n    </ion-tab-button>\n    <ion-tab-button tab=\"Properties\">\n      <ion-icon name=\"home\"></ion-icon>\n      <ion-label>Properties</ion-label>\n    </ion-tab-button>\n    <ion-tab-button tab=\"Agents\">\n      <ion-icon name=\"people\"></ion-icon>\n      <ion-label>Agents</ion-label>\n    </ion-tab-button>\n    <ion-tab-button tab=\"Chat\">\n      <ion-icon name=\"chatboxes\"></ion-icon>\n      <ion-label>Chat</ion-label>\n    </ion-tab-button>\n    <!-- <ion-tab-button tab=\"Chat\">\n        <ion-icon name=\"star\"></ion-icon>\n        <ion-label>MORE</ion-label>\n      </ion-tab-button> -->\n  </ion-tab-bar>\n \n</ion-tabs>\n"
 
 /***/ }),
 

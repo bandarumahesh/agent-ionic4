@@ -62,7 +62,7 @@ var AgentsPageModule = /** @class */ (function () {
 /*! no static exports found */
 /***/ (function(module, exports) {
 
-module.exports = "<ion-header>\n    <ion-toolbar color=\"primary\">\n        <ion-buttons slot=\"start\">\n            <ion-back-button defaulthref=\"\"></ion-back-button>\n          </ion-buttons>\n      <ion-title>AGENTS</ion-title>\n    </ion-toolbar>\n  </ion-header>\n\n<ion-content padding>\n    <ion-fab vertical=\"bottom\" horizontal=\"end\" slot=\"fixed\">\n        <ion-fab-button [routerLink]=\"['/menu/first/tabs/Agents/addAgents']\" routerLinkActive=\"router-link-active\" >\n          <ion-icon name=\"person-add\"></ion-icon>\n        </ion-fab-button>\n      </ion-fab>\n</ion-content>\n"
+module.exports = "<ion-header>\n    <ion-toolbar color=\"primary\">\n        <ion-buttons slot=\"start\">\n            <ion-back-button defaulthref=\"\"></ion-back-button>\n          </ion-buttons>\n      <ion-title>AGENTS</ion-title>\n    \n    </ion-toolbar>\n  </ion-header>\n\n<ion-content >\n <div>\n    <ion-toolbar>\n        <ion-searchbar  animated debounce=\"500\" cancelButtonText=\"Custom Cancel\"></ion-searchbar>\n\n      </ion-toolbar>\n      <div class=\"invites_v\">\n          <ion-checkbox color=\"primary\" [(ngModel)]=\"termsandConditons\" name=\"termsandConditons\" class=\"terms_conditions\"></ion-checkbox> \n          <span class=\"invites_txt\"> Invites</span>\n      </div>\n </div>\n      <!-- List of Sliding Items -->\n<ion-list>\n    <ion-item-sliding class=\"list_item\" *ngFor=\"let item of items;  let i = index\">\n        <ion-item  (click)=\"agentFullView()\">\n            <ion-thumbnail slot=\"start\">\n              <!-- <img src=\"assets/imgs/profilepic.svg\" class=\"agent_image\"> -->\n              <img src=\"assets/icon/instarent_icon.png\" class=\"agent_image\">\n            </ion-thumbnail>\n            <ion-label>\n              <h4>Instarent Agent {{i}}</h4>\n              <p>properties 5</p>\n              <!-- <p><small>Requires text </small></p> -->\n            </ion-label>\n            <p class=\"status_list\"> New</p>\n          </ion-item>\n      <ion-item-options side=\"end\">\n        <ion-item-option (click)=\"unread(item)\"><ion-icon name=\"trash\"></ion-icon> Delete</ion-item-option>\n      </ion-item-options>\n    </ion-item-sliding>\n\n  </ion-list>\n    <ion-fab vertical=\"bottom\" horizontal=\"end\" slot=\"fixed\">\n        <ion-fab-button [routerLink]=\"['/menu/Agents/addAgents']\" routerLinkActive=\"router-link-active\" >\n          <ion-icon name=\"person-add\"></ion-icon>\n        </ion-fab-button>\n      </ion-fab>\n</ion-content>\n\n\n"
 
 /***/ }),
 
@@ -73,7 +73,7 @@ module.exports = "<ion-header>\n    <ion-toolbar color=\"primary\">\n        <io
 /*! no static exports found */
 /***/ (function(module, exports) {
 
-module.exports = "\n/*# sourceMappingURL=data:application/json;base64,eyJ2ZXJzaW9uIjozLCJzb3VyY2VzIjpbXSwibmFtZXMiOltdLCJtYXBwaW5ncyI6IiIsImZpbGUiOiJzcmMvYXBwL3BhZ2VzL2FnZW50cy9hZ2VudHMucGFnZS5zY3NzIn0= */"
+module.exports = "ion-title {\n  text-align: center; }\n\n.list_item {\n  margin-bottom: 12px; }\n\n.status_list {\n  position: absolute;\n  right: 20px;\n  top: 6px;\n  background: #ffffff;\n  padding: 7px 18px;\n  border-radius: 14px;\n  color: #272626;\n  font-size: 11px;\n  box-shadow: 1px 1px 1px 1px #efe9e9; }\n\n.agent_image {\n  border-radius: 50%;\n  width: 52px;\n  height: 52px; }\n\n.invites_v {\n  text-align: end;\n  margin-right: 32px;\n  margin-bottom: 12px; }\n\n.invites_txt {\n  position: relative;\n  top: -8px;\n  left: 4px; }\n\n/*# sourceMappingURL=data:application/json;base64,eyJ2ZXJzaW9uIjozLCJzb3VyY2VzIjpbIi9JbnN0YXJlbnQvSW5zdGFyZW50IFJlcG9zL2FnZW50X3Rlc3RfcHJvamVjdC9pb25pYzQtdGVtcGxhdGUvc3JjL2FwcC9wYWdlcy9hZ2VudHMvYWdlbnRzLnBhZ2Uuc2NzcyJdLCJuYW1lcyI6W10sIm1hcHBpbmdzIjoiQUFBQTtFQUNJLGtCQUFrQixFQUFBOztBQUl0QjtFQUNDLG1CQUFtQixFQUFBOztBQUVwQjtFQVVJLGtCQUFrQjtFQUNsQixXQUFXO0VBQ1gsUUFBUTtFQUNSLG1CQUFtQjtFQUNuQixpQkFBaUI7RUFDakIsbUJBQW1CO0VBQ25CLGNBQWM7RUFDZCxlQUFlO0VBQ2YsbUNBQW1DLEVBQUE7O0FBRXZDO0VBQ0ksa0JBQWtCO0VBQ2xCLFdBQVc7RUFDWCxZQUFZLEVBQUE7O0FBTWhCO0VBQ0ksZUFBZTtFQUNmLGtCQUFrQjtFQUNsQixtQkFBbUIsRUFBQTs7QUFFdkI7RUFDSSxrQkFBa0I7RUFDbEIsU0FBUTtFQUNSLFNBQVMsRUFBQSIsImZpbGUiOiJzcmMvYXBwL3BhZ2VzL2FnZW50cy9hZ2VudHMucGFnZS5zY3NzIiwic291cmNlc0NvbnRlbnQiOlsiaW9uLXRpdGxle1xuICAgIHRleHQtYWxpZ246IGNlbnRlcjtcbn1cblxuXG4ubGlzdF9pdGVte1xuIG1hcmdpbi1ib3R0b206IDEycHg7XG59XG4uc3RhdHVzX2xpc3R7XG4gICAgLy8gcG9zaXRpb246IGFic29sdXRlO1xuICAgIC8vIHJpZ2h0OiAyMHB4O1xuICAgIC8vIHRvcDogNnB4O1xuICAgIC8vIGJhY2tncm91bmQ6ICNhZWJkYzc7XG4gICAgLy8gcGFkZGluZzogN3B4IDE4cHg7XG4gICAgLy8gYm9yZGVyLXJhZGl1czogMTRweDtcbiAgICAvLyBjb2xvcjogI2ZmZjtcbiAgICAvLyBmb250LXNpemU6IDExcHg7XG5cbiAgICBwb3NpdGlvbjogYWJzb2x1dGU7XG4gICAgcmlnaHQ6IDIwcHg7XG4gICAgdG9wOiA2cHg7XG4gICAgYmFja2dyb3VuZDogI2ZmZmZmZjtcbiAgICBwYWRkaW5nOiA3cHggMThweDtcbiAgICBib3JkZXItcmFkaXVzOiAxNHB4O1xuICAgIGNvbG9yOiAjMjcyNjI2O1xuICAgIGZvbnQtc2l6ZTogMTFweDtcbiAgICBib3gtc2hhZG93OiAxcHggMXB4IDFweCAxcHggI2VmZTllOTtcbn1cbi5hZ2VudF9pbWFnZXtcbiAgICBib3JkZXItcmFkaXVzOiA1MCU7XG4gICAgd2lkdGg6IDUycHg7XG4gICAgaGVpZ2h0OiA1MnB4O1xufVxuXG4vLyAgICAgaW9uLWl0ZW0ge1xuLy8gICAgICAgICBwYWRkaW5nLWJvdHRvbTogMTJweDtcbi8vIH0gXG4uaW52aXRlc192e1xuICAgIHRleHQtYWxpZ246IGVuZDtcbiAgICBtYXJnaW4tcmlnaHQ6IDMycHg7XG4gICAgbWFyZ2luLWJvdHRvbTogMTJweDtcbn1cbi5pbnZpdGVzX3R4dHtcbiAgICBwb3NpdGlvbjogcmVsYXRpdmU7XG4gICAgdG9wOi04cHg7XG4gICAgbGVmdDogNHB4O1xufSJdfQ== */"
 
 /***/ }),
 
@@ -103,11 +103,15 @@ var __metadata = (undefined && undefined.__metadata) || function (k, v) {
 var AgentsPage = /** @class */ (function () {
     function AgentsPage(router) {
         this.router = router;
+        this.items = [1, 2, 3, 4, 5, 6, 7, 8, 9, 10, 11, 12, 13, 14, 15, 16, 17, 18, 19, 20];
     }
     AgentsPage.prototype.ngOnInit = function () {
     };
     AgentsPage.prototype.addNewAgent = function () {
         this.router.navigate(['/menu/first/tabs/Agents/addAgents']);
+    };
+    AgentsPage.prototype.agentFullView = function () {
+        this.router.navigateByUrl('menu/agent-full-view');
     };
     AgentsPage = __decorate([
         Object(_angular_core__WEBPACK_IMPORTED_MODULE_0__["Component"])({

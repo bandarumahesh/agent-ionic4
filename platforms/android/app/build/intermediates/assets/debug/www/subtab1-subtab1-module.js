@@ -62,7 +62,7 @@ var SubTab1PageModule = /** @class */ (function () {
 /*! no static exports found */
 /***/ (function(module, exports) {
 
-module.exports = "<!-- <ion-header>\n  <ion-toolbar color=\"primary\">\n  \t<ion-buttons slot=\"start\">\n      <ion-menu-button></ion-menu-button>\n    </ion-buttons>\n    <ion-title>subtab1</ion-title>\n  </ion-toolbar>\n</ion-header> -->\n<ion-header>\n  <ion-toolbar color=\"primary\">\n      <!-- <ion-buttons slot=\"end\">\n          <ion-back-button defaulthref=\"/menu/first/tabs/tab1/details\"></ion-back-button>\n        </ion-buttons> -->\n        <ion-icon name=\"arrow-back\" class=\"back_arrow_common\"  routerLink=\"/menu/first/tabs/Properties\"></ion-icon>\n    <ion-title>Sub Tab 1</ion-title>\n  </ion-toolbar>\n</ion-header>\n\n<ion-content padding>\n  My first tab content\n  <!-- <ion-button color=\"tertiary\" expand=\"block\" (click)=\"goToPlanets()\" ></ion-button> -->\n  <ion-button color=\"tertiary\" expand=\"block\" routerLink=\"/menu/first/tabs/Properties\" >\n    Details forward\n  </ion-button>\n \n</ion-content>\n"
+module.exports = "\n<ion-header>\n  <ion-toolbar color=\"primary\" >\n        <ion-icon slot=\"start\" name=\"arrow-back\" class=\"back_arrow_common\"  routerLink=\"/menu/first/tabs/Properties\"></ion-icon>\n    <ion-title style=\"padding-left: 25%;\">DASHBOARD</ion-title>\n  </ion-toolbar>\n</ion-header>\n<ion-content padding>\n  My first tab content\n  <!-- <ion-button color=\"tertiary\" expand=\"block\" (click)=\"goToPlanets()\" ></ion-button> -->\n  <ion-button color=\"tertiary\" expand=\"block\" routerLink=\"/menu/first/tabs/Properties\" >\n    Details forward\n  </ion-button>\n</ion-content>\n"
 
 /***/ }),
 
