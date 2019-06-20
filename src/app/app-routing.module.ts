@@ -24,7 +24,7 @@ const routes: Routes = [
   { path: 'membership',
   canActivate: [AuthGuard],
   loadChildren: './pages/membership-for-agency/membership-for-agency.module#MembershipForAgencyPageModule' },
-  { path: 'chatBoardList', loadChildren: '/pages/chatModules/chat-board-list/chat-board-list.module#ChatBoardListPageModule' },
+  { path: 'chatBoardList', loadChildren: './pages/chatModules/chat-board-list/chat-board-list.module#ChatBoardListPageModule' },
   { path: 'chatMessagesRoom', loadChildren: './pages/chatModules/chat-messages-room/chat-messages-room.module#ChatMessagesRoomPageModule' },
   // { path: 'agent-assigned-properties',
   // loadChildren: './agent-assigned-properties/agent-assigned-properties.module#AgentAssignedPropertiesPageModule' },
